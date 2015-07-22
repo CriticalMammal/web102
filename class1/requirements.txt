@@ -1,0 +1,5 @@
+Requirements:
+-------------
+- Full width header/footer
+- Scrollable container (for center text)
+- 

@@ -1,0 +1,100 @@
+body {
+	font-family: Helvetica;
+	color: #000;
+}
+
+a {
+	text-decoration: none;
+	color: #444;
+}
+
+header {
+	background-color: #e3e3e3;
+	height: 100px;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.header_inner {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.header_inner img {
+	display: inline-block;
+	float: left;
+	margin-top: 14px;
+	margin-right: 50px;
+}
+
+.header_inner img:hover {
+  border-radius: 50px;
+  transition: 1s all;
+}
+
+.nav {
+	display: inline-block;
+	margin-top: 40px;
+}
+
+.nav li {
+	display: inline-block;
+	margin-right: 120px;
+}
+
+.nav li a:hover {
+	color: red;
+	transition: 0.3s all;
+}
+
+.content {
+	width: 960px;
+ 	margin: 30px auto;
+}
+
+.main_banner {
+	margin-bottom: 30px;
+}
+
+.sub_banner li {
+	float: left;
+	margin-right: 30px;
+	margin-bottom: 30px;
+}
+
+.sub_banner li:last-child {
+	margin-right: 0px;
+}
+
+.featured_banner {
+	float: left;
+}
+
+.featured {
+	float: right;
+	width: 47.5%;
+}
+
+.featured h1 {
+  padding-left: 30px;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-style: italic;
+  text-shadow: 1px 1px 1px red;
+  font-family: monospace;
+}
+
+.featured p {
+	padding-left: 30px;
+	line-height: 28px;
+  height: 255px;
+  overflow: auto;
+}
+
+footer {
+	height: 100px;
+	background: #444;
+	margin-top: 30px;
+}
