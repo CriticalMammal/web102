@@ -1,0 +1,73 @@
+/* ------------ *
+ *  EXAMPLE #1  *
+ * ------------ */
+#example-1 h5 {
+ 	position: relative; /* give element relative positioning */
+ 	margin-top: 50px; /* move element DOWN from the TOP by 50px */
+}
+
+
+/* ------------ *
+ *  EXAMPLE #2  *  <---- FOR YOUR REFERENCE ONLY
+ * ------------ */
+#example-2 div.small_block {
+	position: absolute; 
+	top: 0; /* pin to top of red box */
+	right: 0; /* pin to far right of red box */
+}
+
+
+/* ------------ *
+ *  EXAMPLE #3  *
+ * ------------ */
+#example-3 span {
+	position: absolute; /* absolutely position the element */
+	right: 0; /* pin it to the right of the blue box */
+	bottom: 0; /* pin it to the bottom of the blue box */
+}
+
+
+
+/* ------------ *
+ *  EXAMPLE #4  *
+ * ------------ */
+#example-4 span {
+	position: absolute; /* absolutely position the element */
+	top: 50%; /* we can use percentages too, don't forget! Position element exactly halfway down the box */
+	left: 40px; /* adjust this until the <span> looks like it's directly in the middle */
+}
+
+
+
+/* ------------ *
+ *  EXAMPLE #5  *
+ * ------------ *
+FIRST we need to give this wrapper <div> a position of relative
+This makes it the reference/anchor for the <span> overlay */
+#example-5 {
+	position: relative;
+}
+/* THEN we can absolutely position the <span> element in relation
+   to this blue box <div> element */
+#example-5 span {
+	position: absolute;
+	bottom: 10px; /* move element UP 10px from the BOTTOM */
+	left: 0; /* pin element to far left of blue box */
+}
+
+
+
+/* ------------ *
+ *  EXAMPLE #6  *
+ * ------------ *
+FIRST we need to give this wrapper <div> a position of relative
+This makes it the reference/anchor for the <span> overlay */
+#example-6 {
+	position: relative;
+}
+/* THEN we can absolutely position the <span> element in relation
+   to this blue box <div> element */
+#example-6 span {
+	position: absolute;
+	bottom: -16px; /* use negative values to move element below the bottom of the blue box until it's in the right place */
+}

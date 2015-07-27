@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>CSS Review: Display Inline-Block</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css" /> <!-- template styles/reset -->
+  <link rel="stylesheet" href="custom.css" />
+
+  <!-- * Students, put your CSS styles for the exercises in this stylesheet * -->
+  <link rel="stylesheet" href="students.css" />
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,200' rel='stylesheet' type='text/css' />
+
+  <!-- JS -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+  <script src="custom.js"></script>
+
+</head>
+<body>
+
+  <header>
+    <div class="header_container">
+      <img class="logo" src="images/logo.png" />
+      <h1 class="assignment_title">CSS Review: Display Inline-Block</h1>
+    </div>
+  </header>
+
+  <div id="content">
+
+
+    <div class="instructions container">
+
+      <h3>Match the Layout with Custom CSS</h3>
+      <p>In the following examples, you will be given a screenshot of a layout / arrangement of various HTML elements. You will then see a section containing these HTML elements, and it will be up to you to add the custom CSS styles to match the layout in the screenshot.</p>
+      <p>To complete these exercises, you will need to be modifying a stylesheet within this assignment's directory. There is already a blank CSS stylesheet in this directory which is where you will be adding your styles. Look for the stylesheet titled <strong>students.css</strong> and add your custom CSS rules there. Don't forget to save this file each time you make changes! Afterward, refresh the page to see if your CSS successfully matched the layout at hand.</p>
+      <hr />
+      <p><span class="t_underline">IMPORTANT NOTE</span>: for each example, there is a "wrapper" <code>div</code> that wraps the HTML elements you will be styling. You will need to target each example's wrapper <code>div</code> and THEN its HTML elements in your custom CSS style rules. Each wrapper <code>div</code> has an <strong>ID</strong> corresponding to the example number, in the following format: <strong>example-1</strong></p>
+      <p>Thus, the ID will first contain the word "example" followed by a dash followed by the respective example number. Thus, for Example #1, you will need to preface all custom CSS rules you create with the following:</p>
+      <p class="block_of_code">
+          #example-1 [rest of your selectors here] { <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;[your custom styles here] <br />
+          }
+      </p>
+
+    </div><!-- / .instructions  &&  .container -->
+
+      <!-- 
+      =====================
+          EXAMPLE #1 
+      ===================== 
+      -->
+      <div class="instructions container">
+        <h4>Example #1</h4>
+        <div class="wrapper">
+          <p>The following image shows 3 blue blocks spanning across one line. Each block is a <code>div</code> element with a width of 200px, height of 200px, and a solid black 2px border.</p>
+          <img src="images/example1_layout.png" />
+        </div>
+        <div class="wrapper">
+          <p>In the following section, there are 3 <code>div</code> elements in the markup (check the source/markup of this <strong>index.html</strong> file in SublimeText). Each <code>div</code> has a <strong>class</strong> of <strong>blue_block</strong></p>
+          <p>In the <strong>students.css</strong> stylesheet, you need to target these <code>div</code> elements. Remember that you first need to target the wrapper <code>div</code> which has an ID of <strong>example-1</strong> in this case. Then you will need to target the <code>div</code> elements with class of <strong>blue_block</strong></p>
+          <p>There are two CSS styles you need to apply to these <code>div</code> elements. The <em>background-color</em> and then something else (hint: what's the title of this document?). To get you started, I'll show you the proper way to target these elements and will give you the background-color style. See below:</p>
+          <p class="block_of_code">
+            #example-1 .blue_block { <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;background-color: blue; <br />
+            }
+          </p>
+          <p>With that being said, go ahead and add this style as well as the other important style that you need to turhn these blocks blue and put them all on the same line.</p>
+        </div>
+
+        <div id="example-1" class="wrapper">
+          <div class="blue_block block"></div>
+          <div class="blue_block block"></div>
+          <div class="blue_block block"></div>
+        </div>
+
+        <p>Stuck? Check out the solution in the <strong>answers.css</strong> stylesheet (you can copy and paste the styles from there into the <strong>students.css</strong> stylesheet)</p>
+
+      </div><!-- / .instructions  &&  .container -->
+
+
+
+
+      <!-- 
+      =====================
+          EXAMPLE #2
+      ===================== 
+      -->
+      <div class="instructions container">
+        <h4>Example #2</h4>
+        <div class="wrapper">
+          <p>Do you remember how a block-level element with <em>display:inline-block;</em> set on it now longer takes up the full width of its container but instead takes up the width of only its content? This is one way in which <em>display:inline-block;</em> makes block-level elements behave like inline elements.</p>
+          <p>Consider the following example below. Each sentence is in fact its own separate <code>p</code> element in the following screenshot:</p>
+          <hr />
+          <p class="mockup_wrapper"><img src="images/example2_layout.png" /></p>
+          <hr />
+          <p>The following markup is identical to that of the screenshot above. Go ahead and add a <em>display:inline-block;</em> CSS rule to the <code>p</code> elements inside of the <strong>example-2</strong> wrapper. You will see how the second sentence moves up to set inline with the first, since the first <code>p</code> element now only takes up the width of its content (the text) as opposed to the full width of its container.</p>
+        </div>
+
+        <hr />
+        <div id="example-2" class="wrapper">
+          <p>I am the first sentence inside of a <code>p</code> tag.</p>
+          <p>I am the second sentence inside of a different, separate <code>p</code> tag.</p>
+        </div>
+        <hr />
+
+        <p>Stuck? Check out the solution in the <strong>answers.css</strong> stylesheet (you can copy and paste the styles from there into the <strong>students.css</strong> stylesheet)</p>
+
+      </div><!-- / .instructions  &&  .container -->
+
+
+
+
+
+      <!-- 
+      =====================
+          EXAMPLE #3
+      ===================== 
+      -->
+      <div class="instructions container">
+        <h4>Example #3</h4>
+        <div class="wrapper">
+          <p>Recall that <code>li</code> elements are block-level elements. Therefore, when you create an unorderd <code>ul</code> list or an ordered <code>ol</code> list, each <code>li</code> list item will be on a new line by default (the <code>li</code> items take up the width of their container, which is the <code>ul</code> or <code>ol</code> in this case)</p>
+          <p>If we want to put the items on the same line, we can use the <em>display:inline-block</em> style on the <code>li</code> items.</p>
+          <p>In the following example, you can see an unordered list's list items all on the same line:</p>
+          <hr />
+          <p class="mockup_wrapper"><img src="images/example3_layout.png" /></p>
+          <hr />
+          <p>In the following markup, target the <code>li</code> items within the <strong>example-3</strong> wrapper <code>div</code> and change the <em>display</em> property to make each list item appear on the same line.</p>
+        </div>
+
+        <hr />
+        <div id="example-3" class="wrapper">
+          <ul>
+            <li>List Item #1</li>
+            <li>List Item #2</li>
+            <li>List Item #3</li>
+            <li>List Item #4</li>
+          </ul>
+        </div>
+        <hr />
+
+        <p>Stuck? Check out the solution in the <strong>answers.css</strong> stylesheet (you can copy and paste the styles from there into the <strong>students.css</strong> stylesheet)</p>
+
+      </div><!-- / .instructions  &&  .container -->
+
+
+
+      <!-- 
+      =====================
+          EXAMPLE #4
+      ===================== 
+      -->
+      <div class="instructions container">
+        <h4>Example #4</h4>
+        <div class="wrapper">
+          <p>In the following example, you will see a colored red block with some text in a <code>p</code> element sitting to the right of it:</p>
+          <p class="mockup_wrapper"><img src="images/example4_layout.png" /></p>
+          <p>Obviously, <em>display:inline-block;</em> is at work here. But do you think this property is on the <code>div</code> element (the block)? Or do you think it's on the <code>p</code> element (the text)? OR do you think it's on both? Take a moment to ponder this, and then style up the following markup to match the image.</p>
+        </div>
+
+        <hr />
+        <div id="example-4" class="wrapper">
+          <div class="block red"></div>
+          <p>I am some text in a <code>p</code> tag.</p>
+        </div>
+        <hr />
+
+        <p>Stuck? Check out the solution in the <strong>answers.css</strong> stylesheet (you can copy and paste the styles from there into the <strong>students.css</strong> stylesheet)</p>
+
+      </div><!-- / .instructions  &&  .container -->
+
+
+
+
+
+      <!-- 
+      =====================
+          EXAMPLE #5
+      ===================== 
+      -->
+      <div class="instructions container">
+        <h4>Example #5</h4>
+        <div class="wrapper">
+          <p>Another use for <em>display:inline-block</em> is to give inline elements certain properties that only block-level elements have or respond to. For example, inline elements <strong>will not</strong> respond to top and bottom margins. We can move inline elements left and right with left/right margins, as this still keeps them on the same line. However, we can NOT move them up and down with <em>margin-top</em> or <em>margin-bottom</em> properties... by default.</p>
+          <p>So how can we move that <code>span</code> of text down 10px? Well, we could give it a <em>display:inline-block</em> property, and then we can use a <em>margin-top</em> property to move it, as it will now behave somewhat like a block-level element.</p>
+        </div>
+
+        <hr />
+        <div id="example-5" class="wrapper">
+          <p>This is a paragraph with a <span class="red">red span of text</span> inside of it. Move the span element down by 20px in your CSS. (Yes, it will also bump this paragraph down too. Don't concern yourself with this.)</p>
+        </div>
+        <hr />
+
+        <p>Stuck? Check out the solution in the <strong>answers.css</strong> stylesheet (you can copy and paste the styles from there into the <strong>students.css</strong> stylesheet)</p>
+
+        <p class="note"><span class="t_underline">Note</span>: this is an easy one to forget. Just remember that we can NOT move inline elements up and down with top and bottom margin properties. We MUST change their display to either "block" (which kind of defeats the purpose of using an inline element in the first place) or to "inline-block" (which retains some inline aspects but gives us access to some block-level aspects).</p>
+
+      </div><!-- / .instructions  &&  .container -->
+
+
+
+
+
+      <!-- ////////////////// ******* CLOSING NOTES ****** \\\\\\\\\\\\\\\\\\ -->
+      <div class="instructions container">
+        <h3>Final Notes</h3>
+        <p>When we give elements a <em>display:inline-block</em> property, we are effectively combining aspects of inline elements and block-level elements.</p>
+        <p>It is important to understand how inline elements behave with this property (for example, we get access to margin-top and margin-bottom styles), and it is also important to understand how block-level elements behave with this property (for example, they no longer take up all the width that they can but instead only the space of their content, just like inline elements).</p>
+        <p>Using <em>display:inline-block</em> on block-level elements is the preferred way of getting elements to sit on the same line (if there's enough space, of course). We can also use the <em>float</em> CSS property, but that's a whole can of worms in and of itself.</p>
+        <p>Another important thing to note is that by adding a <em>display:inline-block</em> property to <strong>block-level elements</strong>, most browsers insert about a 4px gap of space between each element. If you recall from class, this can vary from browser to browser, and it's actually due to the way the browser is interpreting white-space in the markup. Feel free to ask me in person more about this if you're interested. In any case, most developers will use a <em>margin-left: -4px</em> style on the affected elements to nudge them right up against each other. However, if you do this, you'll have to ensure that the FIRST element doesn't get this property, otherwise it will also be moved over 4px to the left, which isn't necessary since there's nothing before it.</p>
+        <p>In regards to the above, floating elements won't add any space between them, but the tradeoff is a whole different set of quirks that can often be much more annoying or troublesome to override. Please see my reference document uploaded to Web 101's Github pages <a href="http://#" target="_blank">here</a> titled "All About Floats" to learn more about this.</p>
+        <p>In fact, let's take a look at using <em>display:inline-block</em> to put four red boxes (all <code>div</code> elements, as usual) on the same line, and then we will use a -4px left margin on the 2nd, 3rd, and 4th boxes to nudge them up against each other.</p>
+        <hr />
+        <h4>Example #6</h4>
+        <div id="example-6" class="wrapper">
+          <div class="block red"></div>
+          <div class="block red"></div>
+          <div class="block red"></div>
+          <div class="block red"></div>
+        </div>
+        <hr />
+        <p>Go ahead and check out the <strong>answers.css</strong> stylesheet to see the CSS rules I've applied to the red boxes above. Note that I also put these styles in the main <strong>custom.css</strong> stylesheet since I am not referencing the <strong>answers.css</strong> stylesheet in this document (it is only there for your reference).</p>
+      </div>
+
+      <!-- ////////////////// ******* END CLOSING NOTES ****** \\\\\\\\\\\\\\\\\\ -->
+
+
+
+  </div><!-- / #content -->
+
+
+
+
+<!--
+Created by Sean Emmel, updated September 2014
+Questions? Comments? Email me:  seanemmel.webdeveloper@gmail.com
+--> 
+</body>
+</html>
+

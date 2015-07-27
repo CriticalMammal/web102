@@ -1,0 +1,60 @@
+.outline {
+	outline: 1px dashed black;
+	min-height: 70px;
+	padding: 20px;
+}
+
+.t_center {
+	text-align: center;
+}
+
+.t_underline {
+	text-decoration: underline;
+}
+
+.block_of_code {
+	width: 50%;
+	margin: 20px auto !important;
+	padding: 20px 50px;
+	background-color: #a0a0a0;
+	color: #fff;
+	font-weight: bold;
+}
+
+.block {
+	width: 200px;
+	height: 200px;
+	border: 2px solid black;
+}
+
+.red {
+	background-color: red;
+}
+
+.mockup_wrapper {
+	margin: 20px auto !important;
+}
+
+
+
+
+/* 
+----------------------------------------------------------
+STUDENTS: the following CSS rules are in this stylesheet
+so that you can see the properly styled HTML from Example #6
+You can also find these style rules in the answers.css
+stylesheet for reference
+------------------------------------------------------------- 
+*/
+
+/* ------------ *
+ *  EXAMPLE #6  *
+ * ------------ */
+#example-6 div.block {
+	display: inline-block;
+	margin-left: -4px; /* to get rid of the 4px gap between each box */
+}
+#example-6 div.block:first-child {
+	margin-left: 0; /* get rid of -4px left margin on the first box so it stays in its normal place */
+	/* Note how we used the "first-child" pseudo-element to target the first box */
+}

@@ -1,0 +1,60 @@
+/* ------------ *
+ *  EXAMPLE #1  *
+ * ------------ */
+
+
+
+
+/* ------------ *
+ *  EXAMPLE #2  *
+ * ------------ */
+
+
+
+
+
+/* ------------ *
+ *  EXAMPLE #3  *
+ * ------------ *
+These CSS rules are here so that you can adjust the
+top, right, bottom, and/or left properties of the overlay
+to propertly position it.
+*/
+#example-3 span {
+	position: absolute; /* absolutely position the overlay */
+	top: 0; /* Students, change/delete this as needed */
+	left: 0; /* Students, change/delete this as needed */
+	/* add right or bottom properties as needed! */
+}
+
+
+
+/* ------------ *
+ *  EXAMPLE #4  *
+ * ------------ *
+These CSS rules are here so that you can adjust the
+top, right, bottom, and/or left properties of the overlay
+to propertly position it.
+*/
+#example-4 span {
+	position: absolute; /* absolutely position the overlay */
+	top: 0; /* Students, change/delete this as needed */
+	left: 0; /* Students, change/delete this as needed */
+	/* add right or bottom properties as needed! */
+}
+
+
+
+/* ------------ *
+ *  EXAMPLE #5  *
+ * ------------ *
+Students, first target the "wrapper" <div>, which is the blue box.
+Give it a special position property we've been talking about...
+*/
+#example-5 { /* this is the blue box for example #5
+	/* add your CSS property here! */
+}
+/* THEN give the <span> overlay the proper styles */
+#example-5 span {
+	/* add your CSS properties here! */
+}

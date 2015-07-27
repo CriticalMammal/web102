@@ -1,0 +1,23 @@
+#example-1 .blue_block {
+	display: inline-block;
+	background-color: blue;
+	width: 200px;
+	height: 200px;
+	border: 2px solid black;
+}
+
+#example-2 p {
+	display: inline-block;
+}
+
+#example-3 li {
+	display: inline-block;
+}
+
+/* shouldn't this be the ".box" class not ".red"? */
+#example-4 .red {
+	display: inline-block;
+}
+#example-4 p {
+	display: inline-block;
+}

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>CSS Review: Positioning</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css" /> <!-- template styles/reset -->
+  <link rel="stylesheet" href="custom.css" />
+
+  <!-- * Students, put your CSS styles for the exercises in this stylesheet * -->
+  <link rel="stylesheet" href="students.css" />
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,200' rel='stylesheet' type='text/css' />
+
+  <!-- JS -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+  <script src="custom.js"></script>
+
+</head>
+<body>
+
+  <header>
+    <div class="header_container">
+      <img class="logo" src="images/logo.png" />
+      <h1 class="assignment_title">CSS Review: Positioning</h1>
+    </div>
+  </header>
+
+  <div id="content">
+
+
+    <div class="instructions container">
+
+      <h3>CSS Positioning Review</h3>
+      <p>In the following examples, we will review the following CSS positioning values: <strong>static, fixed, relative, </strong> and <strong>absolute</strong>.</p>
+      <p>To complete these exercises, you will need to be modifying a stylesheet within this assignment's directory. There is already a blank CSS stylesheet in this directory which is where you will be adding your styles. Look for the stylesheet titled <strong>students.css</strong> and add your custom CSS rules there. Don't forget to save this file each time you make changes! Afterward, refresh the page to see if your CSS successfully matched the layout at hand.</p>
+      <hr />
+      <p><span class="t_underline">IMPORTANT NOTE</span>: for each example, there is a "wrapper" <code>div</code> that wraps the HTML elements you will be styling. You will need to target each example's wrapper <code>div</code> and THEN its HTML elements in your custom CSS style rules. Each wrapper <code>div</code> has an <strong>ID</strong> corresponding to the example number, in the following format: <strong>example-1</strong></p>
+      <p>Thus, the ID will first contain the word "example" followed by a dash followed by the respective example number. Thus, for Example #1, you will need to preface all custom CSS rules you create with the following:</p>
+      <p class="block_of_code">
+          #example-1 [rest of your selectors here] { <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;[your custom styles here] <br />
+          }
+      </p>
+
+    </div><!-- / .instructions  &&  .container -->
+
+
+
+    <!--
+    ====================================
+            STATIC POSITIONING
+    ====================================
+    -->
+    <div id="static-positioning" class="instructions container">
+      <h3>Static Positioning</h3>
+      <p>All elements by default have a position of <strong>static</strong></p>
+      <p>If you have not specifically declared a position property on an element, and it isn't <em>inheriting</em> a position property (which you would have to explicitly state in your CSS like:  <em>position:inherit;</em> ), then this element has a position property of <strong>static</strong></p>
+      <p>There is not a whole lot more to say about this property. The very paragraph you are reading currently has a position of <strong>static</strong> because I have not declared a position property on it. However, it is important to note that certain things like <a href="http://www.w3schools.com/cssref/pr_pos_z-index.asp" target="_blank">z-index</a> will <em>not</em> work with elements that have a static (default) position.</p>
+    </div><!-- / .instructions  &&  .container -->
+
+
+
+    <!--
+    ====================================
+            FIXED POSITIONING
+    ====================================
+    -->
+    <div class="instructions container">
+
+      <h3>Fixed Positioning</h3>
+      <p>Fixed positioning is pretty easy to understand, so I will move on to this one next. When an element has a <strong>fixed</strong> position, the element is <span class="t_underline">positioned in relation to the browser window (i.e. the "viewport") and <strong>always the browser window</strong></span>.</p>
+      <p>Because fixed-positioned elements are positioned in relation to the browser window, I can't give an example below, in this container, without injecting an <code>iframe</code> HTML element, which I'm certainly not going to do right now. Instead, the header of this document is a perfect example of fixed positioning.</p>
+      <p>When an element has fixed positioning, it <em>remains in the same spot, "fixed" to the browser window, even as you scroll</em>. This is why the header remains "fixed" to the top of your browser window as you scroll through this document.</p>
+      <p>Open up the <strong>styles.css</strong> stylesheet in this assignment's directory and take a look at the styles for the <code>header</code> element. For your convenience, I have pasted the CSS rules below:</p>
+      <p class="block_of_code">
+        header { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;position: fixed; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;top: 0; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;left: 0; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;width: 100%; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;height: 130px; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;background-color: rgb(39,77,138); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;z-index: 100000000; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;opacity: 1; <br />
+        }
+      </p>
+      <p>Let's take a look at what's going on here. For starters, when we give an element a <strong>fixed</strong> position, we use <strong>top, right, bottom,</strong> and <strong>left</strong> properties to position the element. We do <em>not</em> use <em>margin</em>-top, <em>margin</em>-right, etc. properties.</p>
+      <p>Since I wanted to position this header at the very top of the document, and also to the very far left, I gave this element a <strong>top</strong> property value of <strong>0</strong> and a <strong>left</strong> property value of <strong>0</strong></p>
+      <p>Remember that, with the <a href="http://www.w3schools.com/css/css_boxmodel.asp" target="_blank">CSS Box Model</a>, when we position elements, we are pushing them <em>away</em> from the sides. So giving a <strong>top</strong> value of <strong>10px</strong> would push an element DOWN 10px FROM THE TOP. Thus, it would stand to reason that a value of <strong>0</strong> would keep an element right at its respective edge of the Box Model.</p>
+      <p>That being said, go ahead and experiment with giving this header different values. You can give it a different <strong>top</strong> value to push it down (negative values will move it up!), or you could, for example, remove the <strong>top</strong> property and instead give it a <strong>bottom</strong> property, perhaps with a value of <strong>0</strong> (what do you think this will do?). I suggest doing this <span class="t_underline">in your browser console</span> as opposed to actually changing the CSS rules in the <strong>styles.css</strong> stylesheet, which shouldn't be touched by anyone as it serves the basic template styles for this document.</p>
+
+    </div><!-- / .instructions  &&  .container -->
+
+
+
+    <!--
+    ====================================
+            RELATIVE POSITIONING
+    ====================================
+    -->
+    <div class="instructions container">
+
+      <h3>Relative Positioning</h3>
+      <p>Relative positioning is also pretty easy to understand. When we give an element a position of <strong>relative</strong>, we then can move the element around <em>in relation</em> to where it originally existed in the DOM.</p>
+      <p>When we use <strong>relative positioning</strong>, we will move elements around with <em>margin</em> properties, so we'll be using <strong>margin-top</strong> and <strong>margin-right</strong> etc. properties to move relatively positioned elements around.</p>
+      <p>Recall that margins take up space, so when we move elements around with margins that are relatively positioned, <strong>they still take up space in the DOM where they originally existed</strong></p>
+      <p>In the following example, move the <code>h5</code> heading element down 50px by giving it the appropriate styles in the <strong>students.css</strong> stylesheet.</p>
+
+      <!-- 
+      =====================
+          EXAMPLE #1
+      ===================== 
+      -->
+      <div id="example-1" class="wrapper">
+        <div class="outline">
+          <h5>Move this <code>h5</code> heading down 50px</h5>
+        </div>
+      </div>
+
+      <p>Stuck? Check out the solution in the <strong>answers.css</strong> stylesheet (you can copy and paste the styles from there into the <strong>students.css</strong> stylesheet)</p>
+
+      <hr />
+
+      <p>So you might be asking yourself: "How does moving this element around with margins differ when it is given relative positioning over the default static positioning?"</p>
+      <p>This is a valid question. If you comment out or delete the relative positioning that you should've applied to the <code>h5</code> tag above, you'll see the <strong>margin-top</strong> property still has the same effect. This is normal! (You can also just uncheck the relative positioning in your browser console as well. Don't forget to use this!)</p>
+      <p>So, what is the point of <strong>relative</strong> positioning, then? Well, the <span class="t_underline">main reason behind <strong>relative positioning</strong> is to give an element a position <em>other than static</em>!</span></p>
+      <p>Move on to the section below on <strong>absolute positioning</strong> to find out why this is important.</p>
+
+    </div><!-- / .instructions  &&  .container -->
+
+
+
+    <!--
+    ====================================
+            ABSOLUTE POSITIONING
+    ====================================
+    -->
+    <div class="instructions container">
+
+      <h3>Absolute Positioning</h3>
+      <p>When we give an element a position of <strong>absolute</strong>, we can effectively position that element <em>anywhere on the webpage</em> (i.e. "in the DOM"). This is very powerful.</p>
+      <p>The most important thing to note about absolute positioning is that <strong>an absolutely-positioned element is <span class="t_underline">removed from the DOM</span> and thus all other elements behave as if this absolutely-positioned element does not exist on the webpage</strong>.</p>
+      <p>Consider the first statement above. If we are able to move an element <em>anywhere</em> on a webpage by giving it a position of <strong>absolute</strong>, then it would make sense that it would need to be removed from the DOM. Otherwise, its position would affect every other element around it.</p>
+      <p>Another important thing to note is that using absolute positioning is <em>not wrong</em>! It has a specific use, and you should learn to use it when it is otherwise necessary.</p>
+      <p>Perhaps the most common usage and easiest example to understand of <strong>absolute positioning</strong> is that of <em>overlays</em>. When you see certain elements (for example, text, or social icons, etc.) overlaid on top of others, most likely <strong>absolute positioning</strong> is at work. Let's move on and see some examples.</p>
+
+
+      <!-- 
+      =====================
+          EXAMPLE #2
+      ===================== 
+      -->
+      <div id="example-2" class="wrapper">
+        <h4>Example #2</h4>
+        <p>In the following example, you will see a red box (simply a styled <code>div</code> element). At the top right of this red box, you will see a blue box overlaid on top of this. Take a look below:</p>
+
+        <div class="anchor big_block red">
+          <div class="small_block blue"></div>
+        </div>
+
+        <p>In this example, the small blue box has been given a position of <strong>absolute</strong>. Like with <strong>fixed positioning</strong>, we move <strong>absolute positioned</strong> elements around with the same <strong>top, right, bottom,</strong> and <strong>left</strong> properties. We will NOT be using <em>margin</em> properties.</p>
+        <p>Think back to the fixed-positioned header element. Remember how we gave it <strong>top</strong> and <strong>left</strong> properties with values set to <strong>0</strong>? Well, in this example, the blue box has a <strong>top</strong> value of <strong>0</strong> (to pin it to the top of the red box), and it has a <strong>right</strong> value of <strong>0</strong> (to pin it to the far right of the red box).</p>
+        <p>Take a look at the <strong>answers.css</strong> stylesheet to see the styles I've applied to this.</p>
+
+      </div>
+      <!-- ** END OF EXAMPLE #2 -->
+
+      <p>Okay, so all of that makes sense, hopefully. So where does relative positioning come into play?</p>
+      <p>Well, let's use the example above. Do you see how we're pinning the blue box <em>in relation</em> to the red box? By giving the top and right properties a value of 0, we've pinned this blue box to the top-right corner of the red box. But how does the CSS know that this red box is what we are trying to use as the "container" for this blue box? <strong>Relative positioning</strong> to the rescue!</p>
+      <p>When we absolutely position an element, it <span class="t_underline">must be positioned in relation to another, <strong>parent</strong> element!</span> Furthermore, <span class="t_underline">this parent element <strong>must have a position other than static!</strong></span> Thus, we can give this parent element a position of <strong>relative</strong>.</p>
+      <p>So, let's walk through this. When we give an element a position of <strong>absolute</strong>, the CSS does the following:</p>
+      <ol>
+        <li>First, the CSS looks up the DOM tree to find an element with a position OTHER than static.</li>
+        <li>Remember, it's looking UP the DOM tree, so it's looking up through all of the parents of this absolutely positioned element.</li>
+        <li>When the CSS finds an element with a position other than static, it uses this as the reference for the absolutely positioned element.</li>
+        <li>If there are not parent elements to this absolutely-positioned element with a position other than static, then the CSS will use the <code>body</code> element as its reference.</li>
+        <li>Therefore, when you want to absolutely position an element, you must give the parent element you are positioning it in relation to a position property of <strong>relative</strong> (to change it from the default <strong>static</strong> value).</li>
+      </ol>
+      <p>Confusing? Let's check out some more examples to clear things up.</p>
+
+
+
+      <!-- 
+      =====================
+          EXAMPLE #3
+      ===================== 
+      -->
+      <h4>Example #3</h4>
+
+      <p>In this example, you will be changing the <strong>top, right, bottom, </strong> and/or <strong>left</strong> properties of the overlay to move the overlay to the correct location. The overlay has been given a position of <strong>absolute</strong> and some default properties. You can find these in the <strong>students.css</strong> file. Change/remove/add these properties in this stylesheet file to position the overlay in accordance of what the text instructs you to do.</p>
+
+      <div id="example-3" class="wrapper">
+        <div class="big_block blue anchor">
+          <span class="overlay">Position me at the bottom-right</span>
+        </div>
+      </div>
+
+      <hr />
+      <p>Stuck? Check out the solution in the <strong>answers.css</strong> stylesheet (you can copy and paste the styles from there into the <strong>students.css</strong> stylesheet)</p>
+      <hr />
+      <!-- ** END OF EXAMPLE #3 -->
+
+
+
+      <!-- 
+      =====================
+          EXAMPLE #4
+      ===================== 
+      -->
+      <h4>Example #4</h4>
+
+      <p>In this example, you will be changing the <strong>top, right, bottom, </strong> and/or <strong>left</strong> properties of the overlay to move the overlay to the correct location. The overlay has been given a position of <strong>absolute</strong> and some default properties. You can find these in the <strong>students.css</strong> file. Change/remove/add these properties in this stylesheet file to position the overlay in accordance of what the text instructs you to do.</p>
+
+      <div id="example-4" class="wrapper">
+        <div class="big_block blue anchor">
+          <span class="overlay">Position me directly in the middle</span>
+        </div>
+      </div>
+
+      <hr />
+      <p>Stuck? Check out the solution in the <strong>answers.css</strong> stylesheet (you can copy and paste the styles from there into the <strong>students.css</strong> stylesheet)</p>
+      <hr />
+      <!-- ** END OF EXAMPLE #4 -->
+
+
+
+
+      <!-- 
+      =====================
+          EXAMPLE #5
+      ===================== 
+      -->
+      <h4>Example #5</h4>
+
+      <p>In the prior examples, you were only adjusting the <strong>top, right, bottom, </strong>and <strong>left</strong> properties of the absolutely-positioned element. In the following example, you will see a screenshot of a layout you need to mimic. Then you will be given unstyled HTML elements, and it will be up to you to give the appropriate styles to match the layout. As usual, you will be adding your styles to the <strong>students.css</strong> stylesheet.</p>
+      <p>In the prior examples, I set the position of each blue box to <strong>relative</strong> such that you could absolutely-position the <code>span</code> overlays in relation to their blue box containers. In this example, YOU will need to give the appropriate parent element a position of <strong>relative</strong> such that you can then give the <code>span</code> overlay a position of <strong>absolute</strong> and position it in relation to the blue box.</p>
+
+      <p class="t_underline">Layout to Match</p>
+      <p class="mockup_wrapper ">
+        <img src="images/example5_layout.png" />
+      </p>
+
+      <hr />
+
+      <p class="t_underline">Now it's your turn!</p>
+      <p>Style the following HTML elements properly in the <strong>students.css</strong> stylesheet to mimic the layout above.</p>
+
+      <div id="example-5" class="big_block blue">
+        <span class="overlay">Put me at far left and 10px up from bottom</span>
+      </div>
+
+      <hr />
+      <p>Stuck? Check out the solution in the <strong>answers.css</strong> stylesheet (you can copy and paste the styles from there into the <strong>students.css</strong> stylesheet)</p>
+      <hr />
+      <!-- ** END OF EXAMPLE #5 -->
+
+
+
+      <!-- 
+      =====================
+          EXAMPLE #6
+      ===================== 
+      -->
+      <h4>Example #6</h4>
+
+      <p>Don't forget that we can use negative values too! In this example, you will essentially be doing the same thing you did in Example #5, except now we're going to absolutely position the overlay OUTSIDE of the blue box... what??</p>
+      <p>Think carefully here about what property you're going to use to do this: <strong>top, right, bottom, </strong>or <strong>left</strong></p>
+
+      <p class="t_underline">Layout to Match</p>
+      <p class="mockup_wrapper ">
+        <img src="images/example6_layout.png" />
+      </p>
+
+      <hr />
+
+      <p class="t_underline">Now it's your turn!</p>
+      <p>Style the following HTML elements properly in the <strong>students.css</strong> stylesheet to mimic the layout above.</p>
+
+      <div id="example-6" class="big_block blue">
+        <span class="overlay">Put me at far left and outside the container</span>
+      </div>
+
+      <hr style="margin-top:25px;"/>
+      <p>Stuck? Check out the solution in the <strong>answers.css</strong> stylesheet (you can copy and paste the styles from there into the <strong>students.css</strong> stylesheet)</p>
+      <hr />
+      <!-- ** END OF EXAMPLE #6 -->
+
+
+      <p>So that about wraps it up on absolute positioning. Now you see how you can overlay elements on top of one another using relative and absolute positioning in conjunction with the top, right, bottom, and left properties. Just remember the following important points:</p>
+
+      <ol>
+        <li>You must give the element you are using as a reference/anchor a position of <strong>relative</strong></li>
+        <li>Then you can give the element you are absolutely positioning (e.g., overlaying) and position of <strong>absolute</strong>, and it will be positioned <em>in relation to the relatively-positioned PARENT element</em></li>
+        <li>That being said, remember that the PARENT element will have a relative position, and the CHILD element will have an absolute position. This is crucial. You can NOT absolutely position an element to its siblings or other elements that are not its parents.</li>
+        <li>Use the <strong>top, right, bottom, </strong>and <strong>left</strong> properties on the absolutely positioned element to stick it exactly where you want. Do NOT use any <em>margin</em> properties to MOVE the element unless you are specifically wanting to apply margins around this element.</li>
+        <li>Absolutely positioned elements are <span class="t_underline">removed from the DOM</span>, so make sure you remember that other elements will behave as if the absolutely positioned elements don't exist on the page.</li>
+      </ol>
+
+
+      <hr />
+      <p>That's it! Review this document thoroughly to get a better understanding of all of this. Take a look at this markup as well as all the stylesheets in this assignment's directory. Lastly, <strong>don't forget to Inspect Element on various things in your browser and play around with all of this in your browser console!</strong> Practice is the only way to get these concepts down.</p>
+
+
+
+    </div><!-- / .instructions  &&  .container -->
+
+
+
+
+  </div><!-- / #content -->
+
+  
+  <!--
+  Created by Sean Emmel, updated September 2014
+  Questions? Comments? Email me:  seanemmel.webdeveloper@gmail.com
+  --> 
+</body>
+</html>
+

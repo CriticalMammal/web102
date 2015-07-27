@@ -1,0 +1,54 @@
+/* ------------ *
+ *  EXAMPLE #1  *
+ * ------------ */
+#example-1 .blue_block {
+	display: inline-block; /* To put elements on the same line... note the ~ 4px gap that occurs */
+	background-color: blue; /* To turn the blocks blue; remember, COLOR changes TEXT... you want BACKGROUND-COLOR here */
+}
+
+
+/* ------------ *
+ *  EXAMPLE #2  *
+ * ------------ */
+#example-2 p {
+	display: inline-block; /* targets all p elements inside of #example-2 and gives them display:inline-block;  */
+}
+
+
+/* ------------ *
+ *  EXAMPLE #3  *
+ * ------------ */
+#example-3 ul li {
+	display: inline-block; /* targets all li elements inside of #example-3 and gives them display:inline-block; */
+}
+
+
+/* ------------ *
+ *  EXAMPLE #4  *
+ * ------------ */
+#example-4 div, #example-4 p { /* you can give different selectors the same styles by comma separating them */
+	display: inline-block; /* since BOTH div and p elements are block-level elements, we have to target BOTH of them */
+												 /* otherwise, if we target just one, the other will still expand to the width of the wrapper */
+}
+
+
+/* ------------ *
+ *  EXAMPLE #5  *
+ * ------------ */
+#example-5 span {
+	display: inline-block; /* now we can move the span up and down with margin-top and margin-bottom properties, which inline elements don't normally respond to */
+	margin-top: 20px; /* move the span DOWN 20px by pushing it from the top */
+}
+
+
+/* ------------ *
+ *  EXAMPLE #6  *
+ * ------------ */
+#example-6 div.block {
+	display: inline-block;
+	margin-left: -4px; /* to get rid of the 4px gap between each box */
+}
+#example-6 div.block:first-child {
+	margin-left: 0; /* get rid of -4px left margin on the first box so it stays in its normal place */
+	/* Note how we used the "first-child" pseudo-element to target the first box */
+}

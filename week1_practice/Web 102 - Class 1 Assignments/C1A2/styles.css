@@ -1,0 +1,234 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-family: 'Raleway', sans-serif; /* default font */
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+strong, b, strong *, b * { font-weight: bold; }
+em, i, em *, i * { font-style: italic; }
+
+/* :::::/\/\/\:::::  MAIN STYLES  :::::/\/\/\::::: */
+
+/* ------------------- *
+ *   REUSABLE STYLES   *
+ * ------------------- */
+.float_left {
+	float: left;
+}
+
+.float_right {
+	float: right;
+}
+
+.hidden {
+	display: none;
+}
+
+.inline_block {
+	display: inline-block !important;
+}
+
+.border_box, .border_box:before, .border_box:after {
+	box-sizing: border-box !important;
+}
+
+.clearfix {
+	clear: both;
+}
+
+
+
+/* ----------------- *
+ *   GLOBAL STYLES   *
+ * ----------------- */
+
+body {
+	font-family: 'Raleway',sans-serif !important;
+	background: #ccc url("images/background_texture.png") 0 0 repeat; /* Will need to be an absolute file path */
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	cursor: default;
+	font-size: 14px;
+	padding-top: 62px;
+}
+
+h3 {
+	display: inline-block;
+	position: relative;
+	margin-bottom: 25px;
+	color: rgb(39,77,138);
+	font-family: 'Raleway',sans-serif;
+	font-size: 38px;
+	border-bottom: 1px solid orange;
+}
+
+h4 {
+	display: inline-block;
+	position: relative;
+	margin-top: 25px;
+	margin-bottom: 10px;
+	color: rgb(39,77,138);
+	font-family: 'Raleway',sans-serif;
+	font-size: 22px;
+	border-bottom: 1px solid orange;
+}
+
+code {
+	background-color: #a0a0a0;
+	color: white;
+	padding: 2px;
+	font-weight: bold;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 85px;
+	background-color: rgb(39,77,138);
+	z-index: 100000000;
+	transition: top 0.2s ease-in-out; /* for JS --> hide/show on scroll */
+}
+
+header.off_page {
+	top: -85px;
+}
+
+.header_container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.logo {
+	width: 55px;
+	float: left;
+	margin-top: 15px;
+}
+
+.assignment_title {
+	float: left;
+	margin-top: 25px;
+	color: #fff;
+	margin-left: 50px;
+	font-size: 36px;
+	font-weight: 200;
+}
+
+#content {
+	width: 960px;
+	margin: 50px auto 0px auto;
+}
+
+.wrapper {
+	margin: 15px 0;
+}
+.wrapper::after {
+	clear: both;
+}
+
+.instructions {
+	width: 860px;
+	margin: 0 auto;
+}
+
+.container {
+	width: 940px;
+	min-height: 400px;
+	margin-bottom: 50px;
+	padding: 10px;
+	background-color: #fff;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 2px #999;
+	box-shadow: 0 1px 2px #999;
+}
+.container::after {
+	clear: both;
+}
+
+.container p {
+	margin: 5px 0;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.has-answers {
+	margin: 20px 0;
+	background-color: #efefef;
+	color: #222;
+	font-size: 20px;
+}
+.has-answers::after {
+	clear: both;
+}
+
+.toggle-answer {
+	color: #fff;
+	background-color: #686868;
+	padding: 10px;
+}
+.toggle-answer:hover {
+	cursor: pointer;
+	background-color: #7c7c7c;
+}
+
+.answer {
+	display: none;
+	padding: 10px;
+	overflow: auto;
+	font-size: 16px;
+}
+
+p.note {
+	font-size: italic;
+	font-size: 14px;
+}
+
+
