@@ -1,7 +1,10 @@
 /* ------------ *
  *  EXAMPLE #1  *
  * ------------ */
-
+#example-1 h5 {
+	position: relative;
+	margin-top: 50px;
+}
 
 
 
@@ -22,8 +25,8 @@ to propertly position it.
 */
 #example-3 span {
 	position: absolute; /* absolutely position the overlay */
-	top: 0; /* Students, change/delete this as needed */
-	left: 0; /* Students, change/delete this as needed */
+	bottom: 0; /* Students, change/delete this as needed */
+	right: 0; /* Students, change/delete this as needed */
 	/* add right or bottom properties as needed! */
 }
 
@@ -38,8 +41,9 @@ to propertly position it.
 */
 #example-4 span {
 	position: absolute; /* absolutely position the overlay */
-	top: 0; /* Students, change/delete this as needed */
+	top: 50%; /* Students, change/delete this as needed */
 	left: 0; /* Students, change/delete this as needed */
+	right: 0;
 	/* add right or bottom properties as needed! */
 }
 
@@ -53,8 +57,12 @@ Give it a special position property we've been talking about...
 */
 #example-5 { /* this is the blue box for example #5
 	/* add your CSS property here! */
+	position: relative;
 }
 /* THEN give the <span> overlay the proper styles */
 #example-5 span {
-	/* add your CSS properties here! */
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	margin-bottom: 10px;
 }
