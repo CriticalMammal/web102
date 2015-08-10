@@ -1,0 +1,52 @@
+/* ------------ *
+ *  EXAMPLE #1  *
+ * ------------ */
+
+/* 
+
+	Don't forget, I've already added a few baseline styles to the
+	#example-1 wrapper div as well as some baseline styles for the
+	main nav (like hover colors, padding, font colors, etc.)
+
+	Also, remember, ALL of your CSS rules should start with the
+	#example-1 selector FIRST. We only want to change the styles
+	for the elements within this example. Otherwise, you might
+	accidentally start changing the styles for the main template
+	of this assignment!
+
+	So, again, you should be doing:
+
+	#example-1 selector selector selector {
+	  some styles here
+	}
+
+	Now give it a whirl! Add your styles after the closing 
+	asterisk and slash of this comment block.
+
+*/
+
+#example-1 nav ul > li {
+	position: relative;
+}
+
+#example-1 nav ul.dropdown {
+	display: none;
+	position: absolute;
+	top: 70px;
+	left: -15px;
+	background-color: #777;
+}
+
+#example-1 nav ul li.has-dropdown:hover > ul.dropdown {
+	display: block;
+}
+
+#example-1 nav ul.dropdown li {
+	list-style-type: none;
+	display: block;
+	padding: 15px 21px;
+}
+
+#example-1 nav ul.dropdown li:hover {
+	background-color: #a0a0a0;
+}

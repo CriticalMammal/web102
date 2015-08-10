@@ -1,0 +1,85 @@
+/* ------------ *
+ *  EXAMPLE #1  *
+ * ------------ */
+
+/* 
+	Don't forget, I've already added a few baseline styles to the
+	#example-1 wrapper div as well as some baseline styles for the
+	main nav (like hover colors, padding, font colors, etc.)
+*/
+
+
+
+/*
+First, let's target the direct children <li> elements
+of the #main-nav unordered list. 
+Let's give them each a position of relative. 
+We will need this for when we absolutely position the
+ul.dropdown element (dropdown menus are always absolutely
+positioned so that they are removed from the document flow
+and can overlay on top of other elements)
+Also, we don't want to target ALL <li> elements within the
+#main-nav element... only its DIRECT CHILDREN, hence the use
+of this selector.
+*/
+#example-1 #main-nav > li {
+	position: relative;
+}
+#example-1 #main-nav > li:hover {
+	cursor: pointer; /* Not necessary, but I like pointer cursors on hover */
+}
+
+
+/*
+Now let's style up the actual dropdown menu itself.
+We'll need to absolutely position it in relation to its parent
+<li> element, hence the position of relative we applied above.
+*/
+#example-1 ul.dropdown {
+	display: none; /* We don't want it shown normally */
+	position: absolute; /* Now we can pin this to its parent <li class="has-dropdown"> element */
+	top: 70px; /* Nudge it down... looks pretty good here */
+	left: 0; /* Pin it to the far left of the parent <li class="has-dropdown"> element */
+	margin: 0; /* Get rid of default margin on this <ul> element */
+	padding: 0; /* Get rid of default padding on this <ul> element */
+	width: 100%; /* Set width of our dropdown to 100% so it matches the width of its parent <li class="has-dropdown"> element */
+	list-style-type: none; /* Get rid of default bullets for this <ul> element */
+}
+
+
+/* 
+When we hover over any <li> with a class of "has-dropdown" we will 
+target its DIRECT CHILD <ul> with a class of "dropdown" and then
+show it (change display from "none" to "block")
+*/
+#example-1 li.has-dropdown:hover > ul.dropdown {
+	display: block; 
+}
+
+/* 
+Even though our example only has ONE dropdown menu in it, these
+styles will work for any number of dropdown menus. All we have to 
+do is insert a <ul> element with a class of "dropdown" inside of
+an <li> element with a class of "has-dropdown" and then voila! A
+dropdown menu!
+*/
+
+
+/* 
+Now let's style up the dropdown menu <li> items to match the mockup
+*/
+#example-1 ul.dropdown li {
+	padding: 15px 5px 15px 20px; /* Even out the spacing a bit */
+	color: #fff;
+	background-color: #777;
+}
+
+#example-1 ul.dropdown li:hover {
+	cursor: pointer; /* Give us a pointer on hover */
+	background-color: #a0a0a0; /* Match the bg color on hover for the main nav items */
+}
+
+
+/* That's it!! */
+
+

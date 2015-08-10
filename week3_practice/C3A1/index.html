@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>CSS: Create a Dropdown Menu</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css" /> <!-- template styles/reset -->
+  <link rel="stylesheet" href="custom.css" />
+
+  <!-- * Students, put your CSS styles for the exercises in this stylesheet * -->
+  <link rel="stylesheet" href="students.css" />
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,200' rel='stylesheet' type='text/css' />
+
+  <!-- JS -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+  <script src="custom.js"></script>
+
+</head>
+<body>
+
+  <header>
+    <div class="header_container">
+      <img class="logo" src="images/logo.png" />
+      <h1 class="assignment_title">CSS: Create a Dropdown Menu</h1>
+    </div>
+  </header>
+
+  <div id="content">
+
+
+    <div class="instructions container">
+
+      <h3>Creating a Dropdown Menu</h3>
+      <p>You should now be pretty familiar with the <strong>direct child selector</strong> after completing the assignment from the second class as well as building a dropdown menu in today's class. You are going to need to put it to use for this assignment.</p>
+
+      <p>In the following example, you will be given the markup for a dropdown menu. <strong>You are NOT to change this markup in any way!</strong> It will be up to you to generate the CSS to make this dropdown menu work. You will also need to style it as per the mockup (try to get it as close as possible).</p>
+
+      <p>Pay particular attention to the class names being used in the markup. Also, you'll need to use the <strong>direct child selector</strong> in conjunction with <strong>absolute positioning</strong> to build all of this. For now, do <em>not</em> concern yourself with CSS transitions or any kind of opactiy / z-index. In this example, you are simply to hide or show the dropdown menu on hover.</p>
+
+      <p>Though the markup for this dropdown menu is obviously in this <em>index.html</em> file, I have also pastsed the markup below in a code block for reference.</p>
+
+      <p>The following is the markup used to generate the nav and dropdown menu:</p>
+
+      <p class="block_of_code">
+      &lt;div id="example-1" class="wrapper"&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul id="main-nav"&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Static&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Static&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="has-dropdown"&gt;Dropdown <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="dropdown"&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Dropdown Item&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Dropdown Item&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Dropdown Item&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Dropdown Item&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Dropdown Item&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Static&lt;/li&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt; <br />
+      &lt;/div&gt; <br />
+      </p>
+
+      <br />
+
+      <p>You will need to provide the CSS <em>from scratch</em> to make this dropdown menu work. Put your CSS styles in the <strong>students.css</strong> stylesheet. As per the usual, all of your selectors should be nested within the <strong>#example-1</strong> wrapper <code>div</code> element. In other words, if you wanted to style a <code>ul</code> element within the <code>nav</code> element, you would need to make sure you targeted this within the <strong>#example-1</strong> selector, like this:</p>
+
+      <p class="block_of_code">
+        #example-1 nav ul { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;/* your styles here */ <br />
+        }
+      </p>
+
+      <p>Finally, I have already given the main nav and its menu items some default styles. Your job is mainly to make the dropdown menu functional. However, you will also need to style this dropdown menu in the manner per the mockup. You can find the styles I'm using for the main nav and its menu items in the <strong>custom.css</strong> stylesheet within this assignment's directory.</p>
+
+
+      <p>And now, here is the "broken" nav / dropdown menu.</p>
+
+
+
+      <!-- 
+      =====================
+          EXAMPLE #1
+      ===================== 
+      -->
+      <h4>Example #1</h4>
+      <p>Here is a screenshot of what the nav and dropdown menu should look like after you style them accordingly. In this screenshot, I am hovering over the second item of the dropdown menu. Notice how the background color of the second menu item has changed to match the main nav's hover colors. This clearly indicates which item you're hovering over. (Screenshots from a computer don't include the cursor, but in this case, you should change the cursor to a pointer for any <code>li</code> item you hover over):</p>
+
+      <p class="t_underline" style="margin-top:30px;">MOCKUP TO MATCH</p>
+
+      <img src="images/example1_mockup.png" />
+
+      <br />
+      <br />
+      <hr />
+      <br />
+
+      <p>Now it's your turn!</p>
+
+      <br >
+
+      <p>Add your CSS to the <strong>students.css</strong> file to make this navigation have a functional dropdown menu on the third nav item.</p>
+
+      <div id="example-1" class="wrapper">
+        <nav>
+          <ul id="main-nav">
+            <li>Static</li>
+            <li>Static</li>
+            <li class="has-dropdown">Dropdown
+              <ul class="dropdown">
+                <li>Dropdown Item</li>
+                <li>Dropdown Item</li>
+                <li>Dropdown Item</li>
+                <li>Dropdown Item</li>
+                <li>Dropdown Item</li>
+              </ul>
+            </li>
+            <li>Static</li>
+          </ul>
+        </nav>
+      </div>
+
+
+      <p>Stuck? Take a gander at the <strong>answers.css</strong> stylesheet for a detailed walkthrough of everything.</p>
+
+      <br />
+
+
+    </div><!-- / .instructions  &&  .container -->
+
+
+
+
+
+  </div><!-- / #content -->
+
+  
+  <!--
+  Created by Sean Emmel, updated September 2014
+  Questions? Comments? Email me:  seanemmel.webdeveloper@gmail.com
+  --> 
+</body>
+</html>
+

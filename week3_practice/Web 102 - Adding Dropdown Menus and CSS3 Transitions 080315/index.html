@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Web 102 - Basic Layout Rebuild 072015</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="normalize.css" />
+	<link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+
+	<header>
+		<div class="container">
+			<div class="logo">
+				<img src="images/logo.png" />
+			</div>
+			<nav>
+        <!-- Give element an ID now for easy targeting via CSS -->
+				<ul id="main-nav">
+					<li><a href="#">Nav Item 1</a></li>
+          <!-- All li's that have dropdowns get this "has-dropdown" class -->
+					<li class="has-dropdown"><a href="#">Nav Item 2</a>
+            <!-- All dropdown menus get this "dropdown" class -->
+            <ul class="dropdown">
+              <li><a href="#">DD Item 1</a></li>
+              <li><a href="#">DD Item 2</a></li>
+              <li><a href="#">DD Item 3</a></li>
+              <li><a href="#">DD Item 4</a></li>
+              <li><a href="#">DD Item 5</a></li>
+            </ul>
+          </li>
+					<li><a href="#">Nav Item 3</a></li>
+					<li class="has-dropdown"><a href="#">Nav Item 4</a>
+            <ul class="dropdown">
+              <li><a href="#">DD Item 1</a></li>
+              <li><a href="#">DD Item 2</a></li>
+              <li><a href="#">DD Item 3</a></li>
+              <li><a href="#">DD Item 4</a></li>
+              <li><a href="#">DD Item 5</a></li>
+            </ul>
+          </li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div id="content" class="container">
+
+		<!-- Top Slider / Carousel -->
+		<section>
+			<div id="homepage-hero">
+        <img src="images/homepage_hero.jpg" />
+			</div>
+		</section>
+		<!-- END Top Slider / Carousel -->
+
+    <!-- Events Section -->
+    <section>
+      <div class="events">
+        <div class="event">
+          <img src="images/event1.jpg" />
+        </div>
+        <div class="event">
+          <img src="images/event2.jpg" />
+        </div>
+        <div class="event last">
+          <img src="images/event3.jpg" />
+        </div>
+      </div>
+    </section>
+    <!-- END Events Section -->
+
+    <!-- Upcoming News Section -->
+    <section>
+      <div class="upcoming_news">
+        <div class="news left">
+          <img src="images/news_image.png" />
+        </div>
+        <div class="news right">
+          <h3>Upcoming News</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Corned beef ham excepteur turducken alcatra ut dolore doner shankle et nulla eu cillum. Ea short ribs swine, bacon tri-tip laborum magna jowl nisi excepteur ribeye venison turducken. Ham sirloin et velit pancetta bresaola, eiusmod esse sint voluptate. Pork quis turducken nostrud. Leberkas ball tip brisket flank eiusmod culpa frankfurter occaecat. Sirloin officia anim laboris ut meatball in filet mignon irure porchetta. Consectetur sunt porchetta beef ribs shank cow.</p>
+          <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.</p>
+        </div>
+      </div>
+    </section>
+    <!-- END Upcoming News Section -->
+
+    <!-- Footer Banner -->
+    <section>
+      <div id="footer-banner">
+        <img src="images/footer_banner.jpg" />
+        <div class="icon_wrapper">
+          <div class="footer_icon">
+            <img src="images/murray_50x50.jpg" />
+          </div>
+          <div class="footer_icon">
+            <img src="images/murray_50x50.jpg" />
+          </div>
+          <div class="footer_icon">
+            <img src="images/murray_50x50.jpg" />
+          </div>
+          <div class="footer_icon">
+            <img src="images/murray_50x50.jpg" />
+          </div>
+        </div><!-- / .icon_wrapper -->
+      </div>
+    </section>
+    <!-- END Footer Banner -->
+
+
+	</div><!-- / #content -->
+
+
+  <footer>
+    <p>Codecamp 2015 - July</p>
+  </footer>
+
+</body>
+</html>

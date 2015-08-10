@@ -1,0 +1,179 @@
+.container {
+	margin: 0 auto;
+	width: 960px;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background-color: #EF672F;
+  	box-shadow: 2px 2px 30px #000;
+}
+
+header .logo {
+	float: left;
+}
+
+header nav {
+	float: left;
+}
+
+header nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+/* Target only top-level nav items, or the DIRECT CHILD <li> items from #main-nav */
+/* Note: prefixing `#main-nav` with `header nav` is redundant. I am doing this here solely
+for readability purposes so that you can see we're still targeting the header nav section */
+header nav #main-nav > li {
+	float: left; /* only float top level nav items */
+	position: relative; /* set context for all nested ul.dropdown menus */
+}
+header nav #main-nav > li:hover {
+	background-color: #31302b; /* now adding this BG color change to the <li> elements, NOT the <a> elements anymore. Now when we hover over drodpown menu items, the parent <li> stays highlighted/colored */
+}
+
+/* Target all dropdown menus in main nav for global styles */
+header nav #main-nav ul.dropdown {
+	display: none; /* hide initially */
+	position: absolute;
+	top: 100px;
+	left: 0;
+	width: 100%;
+	background-color: #31302b;
+}
+/*
+Have you noticed how these dropdown menus appear
+BEHIND the footer-banner image? We'll address
+this next class!
+*/
+
+/* Show only the DIRECT CHILD (1st level) dropdown menu when parent <li> is hovered over */
+header nav #main-nav li.has-dropdown:hover > ul.dropdown {
+	display: block; /* now show the dropdown menu when its parent <li> is hovered over! */
+}
+
+/* Change background color of dropdown menu items */
+header nav ul.dropdown li:hover {
+	background-color: #bbb;
+}
+
+header nav ul li a {
+	display: block;
+	padding: 38px 38px 39px 38px; /* 38px padding all around, except for bottom, which needs an extra pixel to line up properly (39px) */
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+footer {
+  width: 100%;
+  height: 75px;
+  padding-top: 30px;
+  background-color: #31302b;
+  box-shadow: 2px -2px 30px #000;
+}
+
+footer p {
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+#content {
+	padding-top: 150px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+/* Float clearing using ::after pseudoelement */
+section::after {
+	display: block; /* display: block ensures we have a block level element */
+	width: 100%; /* give the pseudoelement some width as it's currently dimensionless with no content */
+	content: ''; /* we MUST have a content property, even if it's blank! */
+	clear: both; /* the actual float clearing rule */
+}
+
+.event {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+/*.event.last {
+  margin-right: 0;
+}*/
+
+/* Let's use last-child now */
+.event:last-child {
+  margin-right: 0;
+}
+
+.upcoming_news {
+  overflow: auto;
+}
+
+.upcoming_news .news {
+  float: left;
+  width: 50%;
+  box-sizing: border-box; /* now all padding/borders scale INWARDLY, opposite of the standard CSS box model */
+}
+
+.upcoming_news .news.right {
+  max-height: 300px;
+  padding-left: 30px; /* box-sizing: border-box rule above allows us to apply 30px padding without adding onto the 50% width */
+  overflow-y: auto;
+}
+
+.upcoming_news .news.right h3 {
+  margin-top: 0;
+}
+
+/* Set the context on this <div> element here, b/c, remember, images can NOT be parents to anything... they are self-closing tags */
+#footer-banner {
+	position: relative; /* set context for absolutely positioned .icon_wrapper child element*/
+}
+
+#footer-banner .icon_wrapper {
+	position: absolute; /* overlay on parent #footer-banner */
+	top: 0; /* pin to top */
+	left: 0; /* pin to left */
+}
+
+#footer-banner .footer_icon {
+	display: inline-block; /* put images on same line since they're each wrapped in these .footer_icon divs (block level elements!) */
+	margin-right: 10px;
+	padding: 5px;
+}
+
+#footer-banner .footer_icon img {
+	border-radius: 100%;/* turn images into circles */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
