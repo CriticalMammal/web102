@@ -1,0 +1,117 @@
+* {
+  /*outline: 1px solid black;*/
+}
+
+.clearfix {
+  clear: both;
+}
+
+header {
+  box-shadow: 0px 2px 30px -5px black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background: #ef672f;
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+header .logo {
+	float: left;
+}
+
+header nav {
+	float: left;
+}
+
+header nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+header nav ul li {
+	float: left;
+}
+
+header nav ul li a {
+	display: block;
+	padding: 38px;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+}
+
+header nav ul li a:hover {
+	background: #31302b;
+}
+
+#content {
+	padding-top: 150px;
+}
+
+#events .event-block {
+  display: inline-block;
+  margin: 50px 25px 0 auto;
+  width: 300px;
+  height: 350px;
+}
+
+#events .event-block:last-child {
+  margin-right: 0px;
+}
+
+#news {
+  margin-top: 50px;
+  width: 960px;
+  height: 300px;
+}
+
+#news .news-box {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+#news .news-box h3 {
+  margin: 0;
+}
+
+#news .news-box p {
+  
+}
+
+.news-box:first {
+}
+
+.news-box:last-child {
+  padding-left: 30px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#footer-banner {
+  margin-top: 50px;
+  width: 100%;
+}
+
+footer {
+  margin-top: 50px;
+  width: 100%;
+  height: 75px;
+  background-color: #31302b;
+  box-shadow: 0px -2px 30px -5px black;
+}
+
+footer p {
+  padding-top: 30px;
+  color: lightgray;
+  font-weight: bold;
+  text-align: center;
+}

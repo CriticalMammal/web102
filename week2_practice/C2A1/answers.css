@@ -1,0 +1,173 @@
+/* ------------ *
+ *  EXAMPLE #1  *   <-- Here for reference only... actual used style is in the students.css stylesheet
+ * ------------ */
+#example-1 ul > li {
+	/* We are targetting the DIRECT CHILD <li> of this <ul> in #example-1 */
+	color: red;
+}
+
+
+
+ /* ------------ *
+  *  EXAMPLE #2  *	<-- Here for reference only... actual used style is in the students.css stylesheet
+  * ------------ */
+#example-2 > a {
+	/* We are targetting all <a> elements one level deep (i.e. direct children) in this #example-2 wrapper <div> */
+	color: green;
+}
+
+
+
+/* ------------ *
+ *  EXAMPLE #3  *
+ * ------------ */
+#example-3 > p.blue {
+	/* We are targetting all <p> elements with class of "blue" that are direct children of the #example-3 wrapper <div> */
+	color: blue;
+}
+
+
+
+ /* ------------ *
+  *  EXAMPLE #4  *	<-- Here for reference only... actual used style is in the students.css stylesheet
+  * ------------ */
+#example-4 p + ul {
+	/* We say target a <p> inside of #example-4, and then any IMMEDIATE ADJACENT <ul> that FOLLOWS this <p> element */
+	font-size: 24px;
+	font-weight: bold;
+}
+
+
+
+/* ------------ *
+ *  EXAMPLE #5  *
+ * ------------ */
+#example-5 .box + .circle {
+	/* 
+	We look at all elements with class "box" inside of #example-5
+	Then, we look to see if there is an adjacent SIBLING with class "circle" that IMMEDIATELY FOLLOWS this element
+	*/
+	background-color: red;
+}
+#example-5 .circle + .box {
+	/* 
+	We look at all elements with class "circle" inside of #example-5
+	Then, we look to see if there is an adjacent SIBLING with class "box" that IMMEDIATELY FOLLOWS this element
+	*/
+	border-radius: 5px;
+}
+
+
+
+/* ------------ *
+ *  EXAMPLE #6  *
+ * ------------ */
+#example-6 ul li span:first-child {
+	/* Find all FIRST-CHILD spans of any <li> nested in any <ul> within #example-6 */
+	color: purple;
+}
+
+
+
+/* ------------ *
+ *  EXAMPLE #7  *
+ * ------------ */
+#example-7 ol li:last-child {
+	/* Target teh LAST-CHILD <li> of any <ol> within #example-7 */
+	text-decoration: underline;
+}
+
+
+ /* ------------ *
+  *  EXAMPLE #8  *
+  * ------------ */
+#example-8 .box:nth-child(odd) {
+	/* Target every other <div class="box"></div> element, starting with the first */
+	border-radius: 100px;
+}
+
+
+
+/* ------------ *
+ *  EXAMPLE #9  *
+ * ------------ */
+#example-9 .box:nth-child(2) {
+	background-color: #fff;
+}
+#example-9 .box:nth-child(3) {
+	background-color: #fff;
+}
+#example-9 .box:nth-child(6) {
+	background-color: #fff;
+}
+
+
+
+/* ------------- *
+ *  EXAMPLE #10  *
+ * ------------- */
+#example-10 .box:nth-child(4n) {
+	/* 
+		See the following articles:
+		 1) http://css-tricks.com/almanac/selectors/n/nth-child/
+		 2) http://css-tricks.com/how-nth-child-works/
+	*/
+	background-color: green;
+}
+
+
+
+/* ------------- *
+ *  EXAMPLE #11  *	<-- Here for reference only... actual used style is in the students.css stylesheet
+ * ------------- */
+#example-11 ul li a:hover {
+	color: green;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+
+
+/* ------------- *
+ *  EXAMPLE #12  *
+ * ------------- */
+#example-12 .box:hover {
+	cursor: pointer;
+	width: 100px;
+	height: 100px;
+	opacity: 0.8;
+	box-shadow: 2px 2px 4px #a0a0a0;
+}
+
+
+
+/* ------------- *
+ *  EXAMPLE #13  *	<-- Here for reference only... actual used style is in the students.css stylesheet
+ * ------------- */
+#example-13 p::first-letter {
+	font-size: 32px;
+	font-weight: bold;
+	font-family: serif;
+}
+
+
+
+/* ------------- *
+ *  EXAMPLE #14  *	<-- Here for reference only... actual used style is in the students.css stylesheet
+ * ------------- */
+#example-14 ul li::before {
+	content: 'I am a green span!';
+	color: green;
+}
+
+
+
+/* ------------- *
+ *  EXAMPLE #15  *	<-- Here for reference only... actual used style is in the students.css stylesheet
+ * ------------- */
+#example-15::after {
+	clear: both; /* You MUST include a content property! If you choose not to insert content, make it a blank string! (A pair of single quotes or double quotes, that is) */
+}
+
+/* If no content property is defined in a pseudo ::before or ::after element, then no styles will take effect */
+

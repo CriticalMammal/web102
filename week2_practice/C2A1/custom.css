@@ -1,0 +1,123 @@
+/* ---------------------------------------------------- *
+ * Give <ul> and <ol> elements their normal styles back *
+ * ---------------------------------------------------- */
+ul { 
+   list-style-type: disc; 
+   list-style-position: inside; 
+   font-size: 16px;
+   line-height: 20px;
+}
+ol { 
+   list-style-type: decimal; 
+   list-style-position: inside;
+   font-size: 16px;
+   line-height: 20px; 
+}
+ul ul, ol ul { 
+   list-style-type: circle; 
+   list-style-position: inside; 
+   margin-left: 15px; 
+   font-size: 16px;
+   line-height: 20px;
+}
+ol ol, ul ol { 
+   list-style-type: lower-latin; 
+   list-style-position: inside; 
+   margin-left: 15px; 
+   font-size: 16px;
+   line-height: 20px;
+}
+/* ---------------------------------------------------- */
+
+div, span {
+	font-size: 16px;
+}
+
+.outline {
+	border: 1px dashed black;
+	min-height: 70px;
+}
+
+.t_center {
+	text-align: center;
+}
+
+.t_underline {
+	text-decoration: underline;
+}
+
+.block_of_code {
+	width: 50%;
+	margin: 20px auto !important;
+	padding: 20px 50px;
+	background-color: #a0a0a0;
+	color: #fff;
+	font-weight: bold;
+}
+
+.mockup_wrapper {
+	margin: 20px auto !important;
+}
+
+/* ---------------------------------------------------- */
+
+code.tighten {
+	letter-spacing: -2px;
+}
+
+.box {
+	width: 50px;
+	height: 50px;
+	margin: 5px 10px;
+	background-color: red;
+	border: 2px solid black;
+}
+
+.circle {
+	width: 50px;
+	height: 50px;
+	margin: 5px 10px;
+	background-color: blue;
+	border: 2px solid black;
+	border-radius: 100px;
+}
+
+
+#example-5 {
+	position: relative;
+	padding: 50px 0;
+}
+
+#example-5 .aside {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 540px;
+}
+
+#example-5 .aside .has-answers {
+	margin-top: -10px;
+}
+
+#example-8 .box, #example-9 .box, #example-10 .box, #example-12 .box {
+	display: inline-block;
+}
+
+#example-15 .half {
+	width: 49%;
+	height: 70px;
+	font-size: 34px;
+}
+
+#example-15 .half:first-child {
+	border-right: 3px solid black;
+}
+
+#example-15 .half:last-child {
+	padding-left: 10px;
+}
+
+div.closing_notes {
+	height: 180px !important;
+	min-height: 180px !important;
+}

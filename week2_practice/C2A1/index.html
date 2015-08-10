@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Advanced CSS Selectors</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css" /> <!-- template styles/reset -->
+  <link rel="stylesheet" href="custom.css" />
+
+  <!-- * Students, put your CSS styles for the exercises in this stylesheet * -->
+  <link rel="stylesheet" href="students.css" />
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,200' rel='stylesheet' type='text/css' />
+
+  <!-- JS -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+  <script src="custom.js"></script>
+
+</head>
+<body>
+
+  <header>
+    <div class="header_container">
+      <img class="logo" src="images/logo.png" />
+      <h1 class="assignment_title">Advanced CSS Selectors</h1>
+    </div>
+  </header>
+
+  <div id="content">
+
+
+    <div class="instructions container">
+
+      <h3>A Few More Selectors...</h3>
+      <p>So far, we've learned how to target our HTML using basic selectors. This includes targeting elements via their HTML tags as well as using ID's and classes. In the following few examples, we're going to learn two new and very useful selectors, the <strong>direct child selector</strong> and the <strong>immediate adjacent sibling selector</strong>.</p>
+
+      <h4>Direct Child Selector&nbsp;&nbsp;></h4>
+      <p>The <strong>direct child selector</strong> allows us to target the <em>immediate child elements of the same type</em> nested in a parent element. The selector is simply a right chevron arrow, or <code>&gt;</code></p>
+      <p>In the following example, I have used the following CSS rule to color all of the <strong>first-level</strong>, or <strong>direct-child</strong>  <code>li</code> elements red. You can think of the <code>li</code> elements one level deep (nested) as the <strong>direct children</strong> <code>li</code> elements of the <code>ul</code> element. Here is the CSS:</p>
+      <p class="block_of_code">
+        ul > li { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;color: red; <br />
+        }
+      </p>
+      <p>So, first I am targetting the <code>ul</code> element, and then I am using the <strong>direct child selector</strong> to target all of the <strong>direct child</strong> <code>li</code> elements of this <code>ul</code> element. <em>Note: there is a space on either side of the direct child selector!</em></p>
+      <p>What do you think will happen? Here is the result of this CSS: </p>
+
+      <!-- 
+      =====================
+          EXAMPLE #1
+      ===================== 
+      -->
+      <h4>Example #1</h4>
+      <div id="example-1" class="wrapper">
+        <ul>
+          <li>Coffee</li>
+          <li>Tea</li>
+          <li>Milk</li>
+          <li>Water</li>
+        </ul>
+      </div>
+      <hr />
+
+      <p>Check out the CSS for this in the <strong>students.css</strong> stylesheet as well.</p><hr />
+
+      <br />
+
+      <p>Do you see how ALL of the <code>li</code> elements were turned red? This is because these <code>li</code> elements are all <strong>direct children</strong> of the <code>ul</code> element.</p>
+
+      <p>In the following example, I will target the <strong>direct child</strong> anchor tags (<code>a</code> elements) of the <code>div</code> wrapper with the ID of <strong>#example-2</strong> and color them green.</p>
+      <p>This means that only <code>a</code> elements nested <em>the first level deep in this <code>div</code> will be turned green</em>. Any <code>a</code> elements nested further will not be affected.</p>
+
+      <!-- 
+      =====================
+          EXAMPLE #2
+      ===================== 
+      -->
+      <h4>Example #2</h4>
+      <div id="example-2" class="wrapper">
+        <a href="http://www.google.com">This will be green. It is one level deep, a direct child of the #example-2 wrapper div.</a><br />
+        <a href="http://www.google.com">This will also be green!</a>
+        <p>Here is a paragraph. It contains <a href="http://www.google.com">a link that will NOT be green</a> since it is nested inside of this paragraph element. It is NOT a direct child of the <strong>#example-2</strong> <code>div</code> wrapper. It is a direct child of this paragraph element.</p>
+        <span>This is a span with <a href="http://www.google.com">another link not green</a> nested inside of it. Again, the anchor tag is a direct child of THIS <code>span</code> element, NOT the <strong>#example-2</strong> wrapper <code>div</code> element.</span>
+        <ul>
+          <li><a href="http://www.google.com">Not green!</a></li>
+          <li><a href="http://www.google.com">Not green!</a></li>
+          <li><a href="http://www.google.com">Not green!</a></li>
+        </ul>
+        <a href="http://www.google.com">But this one is!</a>
+      </div>
+
+      <hr />
+      <p>The CSS that generated the above styles is as follows:</p>
+
+      <p class="block_of_code">
+        #example-2 > a { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;color: green; <br />
+        }
+      </p>
+
+      <p>Check out the CSS for this in the <strong>students.css</strong> stylesheet as well.</p>
+      <hr />
+
+      <br />
+
+      <p>Okay, so that makes sense. Now it's your turn!</p>
+      
+      <!-- 
+      =====================
+          EXAMPLE #3
+      ===================== 
+      -->
+      <h4>Example #3</h4>
+      <p>In the following example, you will need to target the direct child <code>p</code> elements of the <strong>#example-3</strong> wrapper <code>div</code> and color them blue.</p>
+      <p>There will be other <code>div</code> elements nested inside of this, and they will also have <code>p</code> elements nested within them. You should NOT be turning these paragraph elements blue.</p>
+      <p>Furthermore, to spice things up a bit, you are going to be targeting the direct child paragraph elements of the <strong>#example-3</strong> wrapper div that have a class of <strong>.blue</strong></p>
+      <p>Think carefully about the CSS here... and of course, take note of the markup both in this file, and by Inspecting the Element in your Chrome Devtools!</p>
+
+      <hr />
+      <div id="example-3" class="wrapper">
+        <p class="blue">I should be colored blue</p>
+        <p>I should not be colored blue.</p>
+        <div>
+          <p>I should not be colored blue.</p>
+          <p>I should not be colored blue.</p>
+          <p>I should not be colored blue.</p>
+        </div>
+        <p class="blue">I should be colored blue.</p>
+        <p class="blue">I should be colored blue.</p>
+        <p>I should not be colored blue.</p>
+        <div>
+          <p>I should not be colored blue.</p>
+          <p class="blue">I should not be colored blue.</p>
+          <!-- BE CAREFUL! The above paragraph, despite having a class of blue, should NOT be colored blue if your CSS is correct!! Remember, we are targeting direct child <p> elements of the <div id="example-3"> wrapper div... not direct child <p> elements of ANY <div> element! -->
+          <p>I should not be colored blue.</p>
+        </div>
+        <p class="blue">I should be colored blue</p>
+      </div>
+      <hr />
+
+      <p>Stuck? Check out the solution in the <strong>answers.css</strong> stylesheet (you can copy and paste the styles from there into the <strong>students.css</strong> stylesheet)</p>
+
+      <hr />
+      <br />
+      <br />
+
+      <h4>Immediate Adjacent Sibling Selector&nbsp;&nbsp;+</h4>
+      <p>The <strong>immediate adjacent sibling selector</strong> is a bit trickier to understand. This selector is represented by a <code>+</code> sign.</p>
+      <p>When you use this selector, you are targetting the <em>immediate adjacent sibling <strong>following</strong></em> an element. Consider the following example:</p>
+
+      <!-- 
+      =====================
+          EXAMPLE #4
+      ===================== 
+      -->
+      <h4>Example #4</h4>
+      <p>In this example, we have the usual wrapper <code>div</code> element with the ID of <strong>#example-4</strong></p>
+      <p>Within this <code>div</code> wrapper, we have some <code>p</code> elements, some <code>ul</code> elements, and some other nested <code>div</code> elements. The goal here is to target all <code>ul</code> elements that are <em>immediate adjacent siblings</em> <span class="t_underline">following</span> a <code>p</code> element. In other words, if there is a paragraph element followed immediately by an unordered list <span class="t_underline">at the same level of nesting</span> (i.e. the unordered list is a SIBLING of the paragraph, NOT a CHILD), we are going to increase the font-size of the unordered list to 24 pixels and make the font weight bold.</p>
+      <p>Here is the CSS for the following example:</p>
+
+      <p class="block_of_code">
+        #example-4 p + ul { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;font-size: 24px; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold; <br />
+        }
+      </p>
+
+      <p>And the result of this CSS is as follows:</p>
+
+      <hr />
+      <div id="example-4" class="wrapper">
+        <p>I am a paragraph element.</p>
+        <p>I am another paragraph.</p>
+        <ul>
+          <li>Item 1 of unordered list should be affected.</li>
+          <li>Item 2 of unordered list should be affected.</li>
+          <li>Item 3 of unordered list should be affected.</li>
+          <li>Item 4 of unordered list should be affected.</li>
+        </ul>
+        <ul>
+          <li>Item 1 of unordered list. Should be normal.</li>
+          <li>Item 2 of unordered list. Should be normal.</li>
+          <li>Item 3 of unordered list. Should be normal.</li>
+          <li>Item 4 of unordered list. Should be normal.</li>
+        </ul>
+        <p>I am a paragraph.</p>
+        <div>I am a div, not a paragraph. The next ul should not be styled.</div>
+        <ul>
+          <li>Item 1 of unordered list. Should be normal.</li>
+          <li>Item 2 of unordered list. Should be normal.</li>
+          <li>Item 3 of unordered list. Should be normal.</li>
+          <li>Item 4 of unordered list. Should be normal.</li>
+        </ul>
+        <p>I am a paragraph.</p>
+        <ul>
+          <li>Item 1 of unordered list should be affected.</li>
+          <li>Item 2 of unordered list should be affected.</li>
+          <li>Item 3 of unordered list should be affected.</li>
+          <li>Item 4 of unordered list should be affected.</li>
+        </ul>
+        <div>I am a div that CONTAINS an unorderd list (it is my child)
+          <ul>
+            <li>Item 1 of unordered list. Should be normal.</li>
+            <li>Item 2 of unordered list. Should be normal.</li>
+            <li>Item 3 of unordered list. Should be normal.</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+
+      <p>Do you see what's happening here? Our CSS is saying to change the font size and weight of all <code>ul</code> elements that are immediate, following SIBLINGS of any paragraph element within the <strong>#example-4</strong> wrapper <code>div</code></p>
+      <p>Therefore, the second unordered list should NOT be styled, since it is not the <em>immediate</em> adjacent sibling to a paragraph element. The third unordered list shouldn't be styled either since it's an immediate adjacent sibling to a <code>div</code> element, not a <code>p</code> element. And finally, the last unordered list should not be styled since it is a CHILD of a <code>div</code> element. Make sense?</p>
+      <p class="note"><span class="t_underline">Note</span>: FYI, you can't put an unordered list inside of a paragraph. This is <strong>invalid HTML</strong> and most browsers will automaticaly close the paragraph before the unordered list begins.</p> 
+      <p>As usual, don't hesitate to check both the <strong>students.css</strong> styles for this (which are what are affecting this file), and the <strong>answers.css</strong> stylesheet (where these styles are including for reference).</p>
+
+      <br />
+
+      <p>Once again, your turn!</p>
+
+      <!-- 
+      =====================
+          EXAMPLE #5
+      ===================== 
+      -->
+      <h4>Example #5</h4>
+      <p>In the following example, you will see boxes and circles. The boxes are <code>div</code> elements with a class of <strong>.box</strong> and the circles are <code>div</code> elements with a class of <strong>.circle</strong> (styles for these classes are in the <em>custom.css</em> stylesheet, if you're interested).</p>
+      <p>All of the boxes are red. All of the circles are blue.</p>
+      <p>If a circle follows a box, you should color the circle red (like the box). Circles NOT directly following a box should be unaffected.</p>
+      <p>If a box follows a circle, you should give it a border radius of 5px.</p>
+
+      <hr />
+
+      <div id="example-5" class="wrapper">
+
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="box"></div>
+        <div class="circle"></div>
+        <div class="box"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+
+        <div class="aside">
+          <!-- Example 5 Mockup -->
+          <div class="has-answers">
+            <p class="toggle-answer">Confused? Click to see what the layout should look like after your CSS</p>
+            <div class="answer">
+              <img src="images/example5_solution.png" class="mockup" />
+            </div>
+          </div>
+        </div>
+
+      </div><!-- / #example-5 -->
+
+      <hr />
+
+      <p>Stuck? Check out the solution in the <strong>answers.css</strong> stylesheet (you can copy and paste the styles from there into the <strong>students.css</strong> stylesheet)</p>
+
+      <p class="note">There are quite a few other more advanced selectors that you can use. A lot of them are new as of CSS3. Read about them <a href="http://www.w3schools.com/cssref/css_selectors.asp" target="_blank">here</a> if you're interested.</p>
+
+
+    </div><!-- / .instructions  &&  .container -->
+
+
+
+
+    <div class="instructions container">
+
+      <h3>Pseudo Selectors</h3>
+      <p>In CSS, we also have things called <strong>pseudo selectors</strong> which help us even further narrow down / pinpoint elements we want to style. We are going to discuss three of these: <strong>first-child</strong>, <strong>last-child</strong>, and <strong>nth-child()</strong></p>
+      <p class="note">The last-child and nth-child() pseudo selectors are not supported in Internet Explorer 8 and below. However, the first-child selector is. Keep this in mind when developing with cross-browser compatibility in mind.</p>
+
+      <h4>First Child</h4>
+      <p>With the <strong>:first-child</strong> pseudo selector, we can target the first child of any parent element. What's important to note is that when we use this pseudo selector, we are going to refer to the actual child element we wish to target/style.</p>
+      <p>Also, when we use pseudo selectors, the syntax is to use a colon right after the selector you're targetting (no space!) followed by the pseudo selector name. Consider the following:</p>
+
+      <p class="block_of_code">
+        ul li:first-child { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold; <br />
+      }
+      </p>
+
+      <p>This CSS is saying to target the first child <code>li</code> element in all <code>ul</code> elements and to give it a font-weight of bold. Therefore, it would stand to reason that the first list item of any unordered list would have a bold font weight.</p>
+      <p>Notice the syntax too... we are applying the <strong>:first-child</strong> pseudo selector to the <em>&lt;li&gt; element itself</em>, NOT to the <code>ul</code> element.</p>
+      <p>With that being said, let's try an example.</p>
+
+
+      <!-- 
+      =====================
+          EXAMPLE #6
+      ===================== 
+      -->
+      <h4>Example #6</h4>
+      <p>In the following example, you will see an unordered list. Each <code>li</code> item within this unordered list contains 2 <code>span</code> elements. You are to color <em>only the first span element</em> of each <code>li</code> item purple.</p>
+
+      <hr />
+      <div id="example-6" class="wrapper">
+        <ul>
+          <li><span>I am the first span.</span> <span>I am the second span.</span></li>
+          <li><span>I am the first span.</span> <span>I am the second span.</span></li>
+          <li><span>I am the first span.</span> <span>I am the second span.</span></li>
+          <li><span>I am the first span.</span> <span>I am the second span.</span></li>
+          <li><span>I am the first span.</span> <span>I am the second span.</span></li>
+        </ul>
+      </div>
+      <hr />
+
+      <p>If you succeeded with your CSS, then only the first <code>span</code> elements for each <code>li</code> element should be purple. The rest should remain unaffected.</p>
+
+      <p>Stuck? Check out the solution in the <strong>answers.css</strong> stylesheet (you can copy and paste the styles from there into the <strong>students.css</strong> stylesheet)</p>
+
+
+      <h4>Last-Child</h4>
+      <p>Given everything above, it would make sense then that in order to target the LAST child of a given parent, we can use the <strong>:last-child</strong> pseudo selector. Nothing much more needs to be said here, except that again, IE 8 and lower do not support this selector.</p>
+
+      <!-- 
+      =====================
+          EXAMPLE #7
+      ===================== 
+      -->
+      <h4>Example #7</h4>
+      <p>The following is an ordered list. Target the last item and give it a text-decoration property of "underline" (don't forget it's an <em>ordered list</em> not an unordered list!)</p>
+
+      <div id="example-7" class="wrapper">
+        <ol>
+          <li>First</li>
+          <li>Second</li>
+          <li>Third</li>
+          <li>Last! Style me!</li>
+        </ol>
+      </div>
+
+
+      <h4>Nth-Child</h4>
+      <p>And finally, we come to the <strong>:nth-child()</strong> pseudo selector. This one is pretty cool, as we can pass in different things into the parentheses to achieve different results.</p>
+      <p>With this pseudo selector, we can pass in the following:</p>
+      <ol>
+        <li>A specific number (1, 3, 8, etc.) that corresponds to the child position (for example, 1 is first-child; in a list of 8 items, 8 would be the last-child)</li>
+        <li>The words "even" or "odd"</li>
+        <li>A formula of <em>(an + b)</em> where <em>a</em> is the cycle size, <em>n</em> is a counter (starts at 0), and <em>b</em> is the offset value (ex: 2n + 1)</li>
+      </ol>
+      <p>You can read more about the <strong>:nth-child()</strong> selector <a href="http://css-tricks.com/almanac/selectors/n/nth-child/" target="_blank">here at CSS Tricks</a> and <a href="http://www.w3schools.com/cssref/sel_nth-child.asp" target="_blank">here at W3Schools</a></p>
+      <p>That being said, let's see some examples.</p>
+
+      <!-- 
+      =====================
+          EXAMPLE #8
+      ===================== 
+      -->
+      <h4>Example #8</h4>
+      <p>In the following example, give every other box a border-radius of 100px to effectively turn it into a circle. Change the first, third, fifth, etc.</p>
+
+      <div id="example-8" class="wrapper">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+
+
+      <!-- 
+      =====================
+          EXAMPLE #9
+      ===================== 
+      -->
+      <h4>Example #9</h4>
+      <p>In the following example, target the 2nd, 3rd, and 6th box and change their background color to white.</p>
+
+      <div id="example-9" class="wrapper">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+
+
+      <!-- 
+      =====================
+          EXAMPLE #10
+      ===================== 
+      -->
+      <h4>Example #10</h4>
+      <p>This one's a bit trickier. Here we'll have to use a formula. Recall that in the formula, <em>n</em> is a counter that starts at 0, not at 1.</p>
+      <p>In this example, target every 4th box and turn it green.</p>
+
+      <div id="example-10" class="wrapper">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+
+
+      <p>Confused? Stuck? This one is indeed tricky. Check out <a href="http://css-tricks.com/how-nth-child-works/" target="_blank">this article</a> for a better explanation on the math at play here.</p>
+
+
+    </div><!-- / .instructions  &&  .container -->
+
+
+
+
+    <div class="instructions container">
+
+      <h3>Pseudo Classes</h3>
+
+      <p>So, you just learned about pseudo selectors. Another type of selector is called a <strong>pseudo class</strong> and it shares the similar syntax. The most basic example of a pseudo class is the hover state on an anchor tag (an <code>a</code> element). Consider the following CSS:</p>
+
+      <p class="block_of_code">
+        ul li a:hover { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;color: green; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;font-size: 20px; <br />
+        }
+      </p>
+
+      <p>This CSS would look for all anchor tags within all <code>li</code> elements within any unordered list. When you hover over the <em>anchor tags</em>, then we change these same anchor tags' styles accordingly. The result of this CSS is as follows:</p>
+
+      <!-- 
+      =====================
+          EXAMPLE #11
+      ===================== 
+      -->
+      <h4>Example #11</h4>
+      <div id="example-11" class="wrapper">
+        <ul>
+          <li><a href="http://www.google.com" target="_blank">Link #1</a></li>
+          <li><a href="http://www.google.com" target="_blank">Link #2</a></li>
+          <li><a href="http://www.google.com" target="_blank">Link #3</a></li>
+          <li><a href="http://www.google.com" target="_blank">Link #4</a></li>
+        </ul>
+      </div>
+
+      <p>Again, check the styles in the <strong>students.css</strong> (or <strong>answers.css</strong>) stylesheet to see these styles.</p>
+
+      <p>Now it's your turn!</p>
+
+      <!-- 
+      =====================
+          EXAMPLE #12
+      ===================== 
+      -->
+      <h4>Example #12</h4>
+      <p>In the following example, increase the width and height of each box to 100px each when you hover over them and change the cursor to a pointer. Also change the opacity to 0.8 and add a box-shadow of: 2px 2px 4px #000</p>
+
+      <div id="example-12" class="wrapper">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+
+      <p>Stuck? Check out the solution in the <strong>answers.css</strong> stylesheet (you can copy and paste the styles from there into the <strong>students.css</strong> stylesheet)</p>
+
+      <br />
+
+      <p>Other pseudo classes exist as well, so research them if you're interested. Check out <a href="http://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">W3Schools Pseudo Classes</a> for more information. Pay particular attention to <strong>:link</strong>, <strong>:visited</strong>, <strong>:hover</strong> (already covered), and <strong>:active</strong></p>
+
+      <p class="note">You'll see terms like pseudo class, pseudo selector, and pseudo element thrown around sometimes seemingly interchangably. While they aren't all the exact same, some terms can refer to the same concept/idea. For example, the <strong>:first-child</strong> pseudo selector can also be considered a pseudo class. The <strong>::first-letter</strong> can be considered a pseudo class or a pseudo element. Semantics and usage are at play here. Don't concern yourself too much with the terminology at this stage. Just understand and practice the concepts.</p>
+
+
+
+    </div><!-- / .instructions  &&  .container -->
+
+
+
+
+    <div class="instructions container">
+
+      <h3>Pseudo Elements</h3>
+
+      <p>And finally... <strong>pseudo elements</strong>!</p>
+      <p>Pseudo elements can be used to add some cool styles/effects to elements. We can even add content before and after elements with pseudo elements. Pseudo elements use a double-colon in their syntax as opposed to a single colon. <em>Both</em> a double or single colon will work, but the CSS3 spec dictates that a double-colon should be used for pseudo elements. For example, let's look at the <strong>::first-letter</strong> pseudo element. Check out the following CSS (and take note of the syntax):</p>
+
+      <p class="block_of_code">
+        #example-13 p::first-letter { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;font-size: 32px; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;font-family: serif; <br />
+        }
+      </p>
+
+      <p>Here is the result of this CSS:</p>
+
+      <!-- 
+      =====================
+          EXAMPLE #13
+      ===================== 
+      -->
+      <h4>Example #13</h4>
+      <div id="example-13" class="wrapper">
+        <p>The world has changed. I feel it in the water. I feel it in the earth. I smell it in the air. Much that once was is lost. For none now live who remember it. It began with the forging of the great rings. Three were given to the elves, immortal, wisest and fairest of all beings. Seven to the Dwarf Lords, great miners and craftsmen of the mountain halls. And nine, nine rings were gifted to the race of men, who above all else desired power. For within these rings was bound the strength and will to govern each race.</p>
+        <p>But they were all of them deceived for another ring was made. In the land of Mordor, in the fires of Mount Doom, the dark Lord Sauron forged in secretl a master ring, to control all others and into this ring, he poured his cruelty, his malice, and his will to dominate all life. One ring to rule them all.</p>
+      </div>
+
+      <br />
+      <p>So, using the <strong>::first-letter</strong> pseudo element, we were able to change the first letter of each and every paragraph inside of the <strong>#example-13</strong> wrapper <code>div</code> </p>
+
+      <br />
+
+      <p>Here is a list of some pseudo elements you can play around with:</p>
+
+      <br />
+
+      <div class="t_underline">Some Pseudo Elements</div>
+      <ul>
+        <li><strong>::first-letter</strong></li>
+        <li><strong>::first-line</strong></li>
+        <li><strong>::before</strong></li>
+        <li><strong>::after</strong></li>
+      </ul>
+
+      <br >
+      <hr />
+      <br >
+
+      <p>I'm pretty sure you can surmise what the <strong>::first-line</strong> pseudo element will do, so let's focus on <strong>::before</strong> and <strong>::after</strong> </p>
+
+      <br />
+
+      <p>With the <strong>::before</strong> pseudo element, we can insert and style content <em>before</em> some element. If you aren't aware of the <strong>content</strong> CSS property, you will be now. We can actually insert content before an element using a combination of the <strong>::before</strong> pseudo element and the <strong>content</strong> CSS property.</p>
+
+      <h4>Example #14</h4>
+      <p>In the following example, I will insert a green <code>span</code> of text before each <code>li</code> item in the following unordered list. First, here is the CSS:</p>
+
+      <p class="block_of_code">
+        #example-14 ul li::before { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;content: 'I am a green span!'; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;color: green; <br />
+        }
+      </p>
+
+      <p>So now let's see the resulting output of this CSS:</p>
+
+      <!-- 
+      =====================
+          EXAMPLE #14
+      ===================== 
+      -->
+      <div id="example-14" class="wrapper">
+        <span class="t_underline">Groceries</span>
+        <ul>
+          <li>Milk</li>
+          <li>Bread</li>
+          <li>Eggs</li>
+          <li>Cheese... lovely cheeeeeeese</li>
+        </ul>
+      </div>
+
+      <br />
+      <p>Do you see what happened? We were actually able to insert content (!!) before elements using purely CSS. Pretty cool.</p>
+
+      <br />
+
+      <p class="note"><span class="t_underline">Note</span>: You might be thinking: "Well, can we insert HTML content before an element using the ::before pseudo element?" Unfortunately, per the spec, you can NOT generate markup via the <strong>content</strong> CSS property. What about <a href="http://www.w3schools.com/html/html_entities.asp" target="_blank">HTML Entities</a>? For example, something like <code class="tighten">& n b s p ;</code> (the HTML entity code for a space... stands for "non-breaking space"). Yes! We can do this, but we can NOT use the HTML Entity code. We must use the <strong>hex code</strong> for these. See <a href="http://www.levihackwith.com/how-to-include-html-entities-in-css-content-property/" target="_blank">this article</a> for more information. You can also check out <a href="http://css-tricks.com/css-content/" target="_blank">this article as well</a> for more information on the CSS <strong>content</strong> property.</p>
+
+      <br />
+
+      <p>So, now you know about the <strong>::before</strong> pseudo element. Well, we also have the <strong>::after</strong> pseudo element as well, and you guessed it--this allows us to insert/style content <em>after</em> an element. One of the best uses for this is clearing floats. You may be aware of using the <code>&lt;div class="clearfix"&gt;&lt;/div&gt;</code> method to clear your floats, which means you need to insert an empty <code>div</code> after your floats to clear them. With the <strong>::after</strong> pseudo element, we can actually clear our floats with no need to add empty <code>div</code> elements anywhere. Consider the following example: </p>
+
+
+      <!-- 
+      =====================
+          EXAMPLE #15
+      ===================== 
+      -->
+      <h4>Example #15</h4>
+      <div id="example-15" class="wrapper">
+        <div class="outline">
+          <div class="half float_left">I am floated left.</div>
+          <div class="half float_left">I am also floated left.</div>
+        </div>
+      </div>
+
+      <p>The above example contains the usual wrapper <code>div</code> with ID of <strong>#example-15</strong> (either Inspect Element on this example in your browser or look at the markup in this <strong>index.html</strong> file)</p>
+      <p>Inside of this we have floated elements. We need to clear these floats. We <em>could</em> put an empty <code>div</code> with class of <strong>.clearfix</strong> after the floated elements to clear them (and of course, we'd have to target <strong>.clearfix</strong> in our CSS and say <strong>clear:both;</strong> to do this). However, in this case, I used the <strong>::after</strong> pseudo element instead. This is the CSS I used to clear the floats inside of the wrapper <code>div</code> with ID of <strong>#example-15</strong>:</p>
+
+      <p class="block_of_code">
+        #example-15::after { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;content: '&nbsp;'; &nbsp;&nbsp;/* we MUST have a content property! */ <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;clear: both; <br />
+        }
+      </p>
+
+      <p><em>If no <strong>content</strong> property is defined in a pseudo <strong>::before</strong> or <strong>::after</strong> element, then no styles will take effect! You <strong>must</strong> specify a <strong>content</strong> property, even if it is blank! Use a pair of single quotes or double quotes to set the content equal to a blank <strong>string </strong><a href="https://www.google.com/webhp?sourceid=chrome-instant&rlz=1C5CHFA_enUS503US503&ion=1&espv=2&ie=UTF-8#q=what%20is%20a%20string%3F%20programming" target="blank">(a programming term)</a>.</em></p>
+
+      <p>So, this CSS looks for this <strong>#example-15</strong> wrapper <code>div</code> and then right AFTER this element, the CSS employs a <strong>clear:both;</strong> property to clear the floats. Boom. Done. No empty <code>div</code> elements. No other bogus clearing tricks. Simply a quick line of CSS using the <strong>::after</strong> pseudo element.</p>
+
+      <p>Check the <strong>students.css</strong> stylesheet and/or the <strong>answers.css</strong> stylesheet to see this.</p>
+
+
+
+    </div><!-- / .instructions  &&  .container -->
+
+
+    <div class="instructions container closing_notes">
+      <h3>Closing Notes</h3>
+      <p>So that about does it for some more advanced CSS selectors and pseudo selectors, pseudo classes, and pseudo elements. I definitely encourage you to go find out about other CSS selectors and other pseudo selectors/classes/elements not covered in this assignment. In any case, hopefully the examples here have helped to clarify some of these concepts and give you some practice using them. Definitely review this <strong>index.html</strong> file's markup in Sublime Text and check out the styles in the <strong>answers.css</strong> and <strong>students.css</strong> stylesheets that correspond with all of these examples.</p>
+
+
+    </div><!-- / .instructions  &&  .container -->
+
+
+
+
+
+  </div><!-- / #content -->
+
+  
+  <!--
+  Created by Sean Emmel, updated September 2014
+  Questions? Comments? Email me:  seanemmel.webdeveloper@gmail.com
+  --> 
+</body>
+</html>
+

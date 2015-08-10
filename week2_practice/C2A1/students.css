@@ -1,0 +1,158 @@
+/* ------------ *
+ *  EXAMPLE #1  *
+ * ------------ */
+ #example-1 ul > li {
+ 	/* We are targetting the DIRECT CHILD <li> of this <ul> in #example-1 */
+ 	color: red;
+ }
+
+
+ /* ------------ *
+  *  EXAMPLE #2  *
+  * ------------ */
+#example-2 > a {
+	/* We are targetting all <a> elements one level deep (i.e. direct children) in this #example-2 wrapper <div> */
+	color: green;
+}
+
+
+/* ------------ *
+ *  EXAMPLE #3  *
+ * ------------ */
+#example-3 > .blue {
+	color: blue;
+}
+
+
+
+
+ /* ------------ *
+  *  EXAMPLE #4  *
+  * ------------ */
+#example-4 p + ul {
+	/* We say target a <p> inside of #example-4, and then any IMMEDIATE ADJACENT <ul> that FOLLOWS this <p> element */
+	font-size: 24px;
+	font-weight: bold;
+}
+
+
+
+/* ------------ *
+ *  EXAMPLE #5  *
+ * ------------ */
+#example-5 .box + .circle {
+	background-color: red;
+}
+
+#example-5 .circle + .box {
+	border-radius: 5px;
+}
+
+
+
+
+/* ------------ *
+ *  EXAMPLE #6  *
+ * ------------ */
+#example-6 ul li span:first-child {
+	background-color: purple;
+}
+
+
+
+/* ------------ *
+ *  EXAMPLE #7  *
+ * ------------ */
+#example-7 ol li:last-child {
+	text-decoration: underline;
+}
+
+
+
+/* ------------ *
+ *  EXAMPLE #8  *
+ * ------------ */
+#example-8 .box:nth-child(even) {
+	border-radius: 100px;
+}
+
+
+
+/* ------------ *
+ *  EXAMPLE #9  *
+ * ------------ */
+#example-9 .box:nth-child(2) {
+	background-color: white;
+}
+
+#example-9 .box:nth-child(3) {
+	background-color: white;
+}
+
+#example-9 .box:nth-child(6) {
+	background-color: white;
+}
+
+
+/* ------------- *
+ *  EXAMPLE #10  *
+ * ------------- */
+#example-10 .box:nth-child(4n) {
+	background-color: green;
+}
+
+
+/* ------------- *
+ *  EXAMPLE #11  *
+ * ------------- */
+#example-11 ul li a:hover {
+	color: green;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+
+
+/* ------------- *
+ *  EXAMPLE #12  *
+ * ------------- */
+#example-12 .box:hover {
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+	opacity: 0.8;
+	box-shadow: 2px 2px 4px #000;
+}
+
+
+
+/* ------------- *
+ *  EXAMPLE #13  *
+ * ------------- */
+#example-13 p::first-letter {
+	font-size: 32px;
+	font-weight: bold;
+	font-family: serif;
+}
+
+
+
+/* ------------- *
+ *  EXAMPLE #14  *
+ * ------------- */
+#example-14 ul li::before {
+	content: 'I am a green span!';
+	color: green;
+}
+
+
+
+/* ------------- *
+ *  EXAMPLE #15  *
+ * ------------- */
+#example-15::after {
+	content: ''; /* You MUST include a content property! If you choose not to insert content, make it a blank string! (A pair of single quotes or double quotes, that is) */
+	clear: both;
+}
+
+/* If no content property is defined in a pseudo ::before or ::after element, then no styles will take effect */
